@@ -8,6 +8,7 @@ const topServices = [
       "Moderne, schnelle Websites die Vertrauen aufbauen und Kunden gewinnen. Kein Baukastensystem – individuelle Entwicklung die zu deinem Unternehmen passt und bei Google funktioniert.",
     tags: ["Next.js", "WordPress", "Figma", "Responsive"],
     highlight: true,
+    href: "/leistungen/webdesign",
   },
   {
     emoji: "🔍",
@@ -16,6 +17,7 @@ const topServices = [
       "Damit dich deine Kunden in Dinslaken, Duisburg und ganz NRW bei Google finden. Lokales SEO, Google Unternehmensprofil und technische Optimierung – damit du gefunden wirst.",
     tags: ["Lokales SEO", "Google Profil", "Rankings"],
     highlight: false,
+    href: "/leistungen/online-sichtbarkeit",
   },
   {
     emoji: "🤖",
@@ -24,6 +26,7 @@ const topServices = [
       "Wir bringen KI in dein Unternehmen – von automatisierten Prozessen bis zu smarten Tools die Zeit und Geld sparen. Konkret, anwendbar und auf deinen Alltag zugeschnitten.",
     tags: ["Automatisierung", "ChatGPT", "Make.com"],
     highlight: false,
+    href: "/leistungen/ki-integration",
   },
 ];
 
@@ -32,11 +35,13 @@ const moreServices = [
     emoji: "🎨",
     title: "Grafik & Branding",
     description: "Logo, Corporate Identity und Printmaterialien. Damit du professionell auftrittst – online wie offline.",
+    href: "/leistungen/grafik-branding",
   },
   {
     emoji: "🎬",
     title: "Video & Content",
     description: "Reels, Imagefilme und Social-Media-Content der auffällt. Für Instagram, TikTok und YouTube.",
+    href: "/leistungen/video-content",
   },
 ];
 
@@ -64,8 +69,9 @@ export default function Services() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
           {topServices.map((s, i) => (
             <AnimateOnScroll key={s.title} delay={i * 0.1}>
-              <div
-                className={`group relative h-full p-7 rounded-2xl border transition-all duration-300 overflow-hidden ${
+              <a
+                href={s.href}
+                className={`group relative h-full p-7 rounded-2xl border transition-all duration-300 overflow-hidden flex flex-col ${
                   s.highlight
                     ? "bg-[#E8400A]/8 border-[#E8400A]/25 hover:border-[#E8400A]/50"
                     : "bg-[#1C1C1C] border-white/5 hover:border-[#E8400A]/20"
@@ -104,7 +110,7 @@ export default function Services() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                   </svg>
                 </div>
-              </div>
+              </a>
             </AnimateOnScroll>
           ))}
         </div>
@@ -113,13 +119,16 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {moreServices.map((s, i) => (
             <AnimateOnScroll key={s.title} delay={i * 0.1}>
-              <div className="group flex items-start gap-5 p-6 rounded-2xl bg-[#1C1C1C] border border-white/5 hover:border-[#E8400A]/15 transition-all duration-300">
+              <a href={s.href} className="group flex items-start gap-5 p-6 rounded-2xl bg-[#1C1C1C] border border-white/5 hover:border-[#E8400A]/15 transition-all duration-300">
                 <div className="text-2xl shrink-0 mt-0.5">{s.emoji}</div>
-                <div>
-                  <h3 className="font-bold text-white mb-1.5">{s.title}</h3>
+                <div className="flex-1">
+                  <h3 className="font-bold text-white mb-1.5 group-hover:text-[#E8400A] transition-colors">{s.title}</h3>
                   <p className="text-sm text-[#A0A0A0] leading-relaxed">{s.description}</p>
                 </div>
-              </div>
+                <svg className="shrink-0 mt-0.5 text-[#E8400A] opacity-0 group-hover:opacity-100 transition-opacity" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+              </a>
             </AnimateOnScroll>
           ))}
         </div>
