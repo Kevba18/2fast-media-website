@@ -111,12 +111,8 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                name="kontakt"
-                method="POST"
-                data-netlify="true"
                 className="space-y-4"
               >
-                <input type="hidden" name="form-name" value="kontakt" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
