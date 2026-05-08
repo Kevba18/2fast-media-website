@@ -1,10 +1,5 @@
-const Logo = () => (
-  <span className="text-xl font-extrabold italic tracking-tight">
-    <span className="text-[#E8400A]">2</span>
-    <span className="text-white">fastmedia</span>
-    <span className="text-[#E8400A]">.</span>
-  </span>
-);
+import BrandLogo from "./BrandLogo";
+import CookieSettingsButton from "./CookieSettingsButton";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -15,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-8">
           {/* Logo + tagline */}
           <div>
-            <Logo />
+            <BrandLogo href="/" className="md:h-10" />
             <p className="text-xs text-[#A0A0A0] mt-2 max-w-xs">
               Webdesign, Online-Sichtbarkeit & KI-Integration für Unternehmen im Ruhrgebiet.
             </p>
@@ -25,9 +20,10 @@ export default function Footer() {
           <nav className="flex flex-wrap gap-x-8 gap-y-3">
             {[
               ["#leistungen", "Leistungen"],
-              ["#projekte", "Projekte"],
-              ["#ueber-mich", "Über mich"],
-              ["#kontakt", "Kontakt"],
+              ["#warum", "Warum 2fastmedia"],
+              ["/projekte", "Projekte"],
+              ["/website-check", "Website Check"],
+              ["/kontakt", "Kontakt"],
             ].map(([href, label]) => (
               <a
                 key={href}
@@ -43,12 +39,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/5">
           <p className="text-xs text-[#A0A0A0]">
-            © {year} 2fast Media · Kevin Balfanz · Dinslaken
+            © {year} 2fastmedia · Webdesign, SEO und KI Integration
           </p>
           <div className="flex items-center gap-5">
             {[
-              ["#", "Impressum"],
-              ["#", "Datenschutz"],
+              ["/impressum", "Impressum"],
+              ["/datenschutz", "Datenschutz"],
             ].map(([href, label]) => (
               <a
                 key={label}
@@ -58,6 +54,7 @@ export default function Footer() {
                 {label}
               </a>
             ))}
+            <CookieSettingsButton />
           </div>
         </div>
       </div>

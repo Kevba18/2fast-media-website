@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
-  title: "Webdesign Dinslaken – Professionelle Website erstellen lassen | 2fast Media",
+  title: "Webdesign Dinslaken – Professionelle Website erstellen lassen | 2fastmedia",
   description:
     "Individuelle Webseiten für Unternehmen in Dinslaken, Duisburg & NRW. Schnelle, moderne Websites die bei Google ranken. Kein Baukastensystem – jetzt kostenlos anfragen.",
   keywords: [
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://2fastmedia.de/leistungen/webdesign" },
   openGraph: {
-    title: "Webdesign Dinslaken – Professionelle Website erstellen lassen | 2fast Media",
+    title: "Webdesign Dinslaken – Professionelle Website erstellen lassen | 2fastmedia",
     description:
       "Individuelle Webseiten für Unternehmen in Dinslaken & NRW. Schnell, modern, Google-optimiert.",
     url: "https://2fastmedia.de/leistungen/webdesign",
@@ -31,7 +32,7 @@ const schema = {
   name: "Webdesign & Webentwicklung",
   provider: {
     "@type": "LocalBusiness",
-    name: "2fast Media",
+    name: "2fastmedia",
     url: "https://2fastmedia.de",
     address: {
       "@type": "PostalAddress",
@@ -55,7 +56,7 @@ const faqSchema = {
       name: "Was kostet eine professionelle Website in Dinslaken?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Eine individuelle Website bei 2fast Media startet ab 800 €. Der genaue Preis hängt von Umfang, Funktionen und Design ab. Im kostenlosen Erstgespräch erstellst du ein transparentes Angebot.",
+        text: "Eine individuelle Website bei 2fastmedia startet ab 800 €. Der genaue Preis hängt von Umfang, Funktionen und Design ab. Im kostenlosen Erstgespräch erstellst du ein transparentes Angebot.",
       },
     },
     {
@@ -84,7 +85,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Macht 2fast Media auch Online-Shops?",
+      name: "Macht 2fastmedia auch Online-Shops?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Ja, wir entwickeln auch E-Commerce-Lösungen mit Shopify oder WooCommerce. Sprich uns im Erstgespräch an.",
@@ -97,7 +98,7 @@ const benefits = [
   {
     icon: "⚡",
     title: "Blitzschnell geladen",
-    text: "Optimierte Ladezeiten unter 1 Sekunde. Google belohnt Geschwindigkeit – deine Nutzer auch.",
+    text: "Auf schnelle Ladezeiten, saubere technische Struktur und mobile Nutzung optimiert. Google und deine Nutzer honorieren das.",
   },
   {
     icon: "📱",
@@ -124,11 +125,11 @@ const steps = [
 ];
 
 const faqs = [
-  { q: "Was kostet eine professionelle Website in Dinslaken?", a: "Eine individuelle Website bei 2fast Media startet ab 800 €. Der genaue Preis hängt von Umfang, Funktionen und Design ab. Im kostenlosen Erstgespräch erstellst du ein transparentes Angebot." },
+  { q: "Was kostet eine professionelle Website in Dinslaken?", a: "Eine individuelle Website bei 2fastmedia startet ab 800 €. Der genaue Preis hängt von Umfang, Funktionen und Design ab. Im kostenlosen Erstgespräch erstellst du ein transparentes Angebot." },
   { q: "Wie lange dauert die Entwicklung?", a: "Eine einfache Unternehmenswebsite ist typischerweise in 2–3 Wochen fertig. Bei komplexeren Projekten sind es 4–6 Wochen." },
   { q: "Kann ich die Website später selbst bearbeiten?", a: "Ja. Auf Wunsch wird ein einfaches CMS integriert, sodass du Texte und Bilder selbst aktualisieren kannst – ohne Programmierkenntnisse." },
   { q: "Was ist der Unterschied zu Wix oder Jimdo?", a: "Baukastensysteme sind langsam, generisch und technisch limitiert. Individuelle Entwicklung bedeutet schnellere Ladezeiten, besseres Google-Ranking und kein monatliches Abo." },
-  { q: "Macht 2fast Media auch Online-Shops?", a: "Ja, wir entwickeln E-Commerce-Lösungen mit Shopify oder WooCommerce. Sprich uns im Erstgespräch an." },
+  { q: "Macht 2fastmedia auch Online-Shops?", a: "Ja, wir entwickeln E-Commerce-Lösungen mit Shopify oder WooCommerce. Sprich uns im Erstgespräch an." },
 ];
 
 const otherServices = [
@@ -149,9 +150,9 @@ export default function WebdesignPage() {
         <div className="max-w-4xl mx-auto">
           <AnimateOnScroll>
             <nav className="flex items-center gap-2 text-xs text-[#A0A0A0] mb-8" aria-label="Breadcrumb">
-              <a href="/" className="hover:text-white transition-colors">Startseite</a>
+              <Link href="/" className="hover:text-white transition-colors">Startseite</Link>
               <span>/</span>
-              <a href="/#leistungen" className="hover:text-white transition-colors">Leistungen</a>
+              <Link href="/#leistungen" className="hover:text-white transition-colors">Leistungen</Link>
               <span>/</span>
               <span className="text-white">Webdesign</span>
             </nav>
@@ -164,7 +165,7 @@ export default function WebdesignPage() {
               Individuelle Webseiten für Unternehmen in Dinslaken, Duisburg und ganz NRW. Kein Baukastensystem – professionelle Entwicklung, die bei Google rankt und Besucher in Kunden verwandelt.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="/#kontakt"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#E8400A] text-white font-bold hover:bg-[#FF5520] transition-all duration-200 hover:scale-105 active:scale-95"
               >
@@ -172,13 +173,13 @@ export default function WebdesignPage() {
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/#projekte"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/10 text-white font-semibold hover:border-white/30 transition-all duration-200"
               >
                 Referenzen ansehen
-              </a>
+              </Link>
             </div>
           </AnimateOnScroll>
         </div>
@@ -227,7 +228,7 @@ export default function WebdesignPage() {
                   Mit einer individuell entwickelten Website bist du unabhängig von monatlichen Abogebühren, hast volle Kontrolle über dein Design und profitierst von technischer Überlegenheit, die sich direkt im Google-Ranking niederschlägt.
                 </p>
                 <p>
-                  2fast Media entwickelt mit <strong className="text-white">Next.js</strong> – einer der modernsten Technologien für schnelle, SEO-freundliche Websites. Das Ergebnis: Ladezeiten unter einer Sekunde und ein technisches Fundament auf dem du langfristig aufbauen kannst.
+                  2fastmedia entwickelt mit <strong className="text-white">Next.js</strong> – einer der modernsten Technologien für schnelle, SEO-freundliche Websites. Das Ergebnis: auf schnelle Ladezeiten optimierte, technisch sauber aufgebaute Seiten mit einem Fundament, auf dem du langfristig aufbauen kannst.
                 </p>
               </div>
             </div>
@@ -285,7 +286,7 @@ export default function WebdesignPage() {
             <p className="text-[#A0A0A0] mb-8 text-lg">
               Kostenloses Erstgespräch – kein Angebot ohne vorherige Absprache. Für Unternehmen in Dinslaken, Duisburg und ganz NRW.
             </p>
-            <a
+            <Link
               href="/#kontakt"
               className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-[#E8400A] text-white font-bold text-lg hover:bg-[#FF5520] transition-all duration-200 hover:scale-105 active:scale-95"
             >
@@ -293,7 +294,7 @@ export default function WebdesignPage() {
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
               </svg>
-            </a>
+            </Link>
           </AnimateOnScroll>
         </div>
       </section>
@@ -302,12 +303,12 @@ export default function WebdesignPage() {
       <section className="py-20 px-5 md:px-8 bg-[#0D0D0D] border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <AnimateOnScroll className="mb-10">
-            <h2 className="text-2xl font-extrabold italic tracking-tight">Weitere Leistungen von 2fast Media</h2>
+            <h2 className="text-2xl font-extrabold italic tracking-tight">Weitere Leistungen von 2fastmedia</h2>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {otherServices.map((s, i) => (
               <AnimateOnScroll key={s.href} delay={i * 0.07}>
-                <a
+                <Link
                   href={s.href}
                   className="group flex items-start gap-4 p-5 rounded-2xl bg-[#141414] border border-white/5 hover:border-[#E8400A]/20 transition-all duration-200"
                 >
@@ -316,7 +317,7 @@ export default function WebdesignPage() {
                     <p className="font-bold text-white text-sm group-hover:text-[#E8400A] transition-colors">{s.title}</p>
                     <p className="text-xs text-[#A0A0A0] mt-0.5">{s.text}</p>
                   </div>
-                </a>
+                </Link>
               </AnimateOnScroll>
             ))}
           </div>

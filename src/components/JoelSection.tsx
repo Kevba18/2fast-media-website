@@ -91,15 +91,16 @@ export default function JoelSection() {
         {/* Headline */}
         <AnimateOnScroll delay={0.05}>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold italic tracking-tight leading-[1.05] mb-6">
-            Websites, die überzeugen.{" "}
+            Websites, die verkaufen.{" "}
             <br className="hidden md:block" />
-            <span className="text-[#E8400A]">Content, der gesehen wird.</span>
+            <span className="text-[#E8400A]">Content, der Reichweite bringt.</span>
           </h2>
           <p className="text-[#A0A0A0] text-base md:text-lg leading-relaxed max-w-3xl mb-16">
-            2fastmedia verbindet strategische Websites, SEO-Struktur und KI-Prozesse mit Social
-            Media Content, Video-Produktion und echter Sichtbarkeit. Zusammen mit Joel entsteht ein
-            Angebot für Unternehmen, Künstler, Events und Marken, die online nicht nur gut aussehen,
-            sondern Reichweite aufbauen wollen.
+            2fastmedia verbindet strategische Websites, SEO-Struktur und KI-Prozesse mit
+            professioneller Videoproduktion, Social-Media-Content und echter Sichtbarkeit.
+            Gemeinsam mit einem spezialisierten Partner für Video und Content entsteht ein Angebot
+            für Unternehmen, Künstler, Events und Marken, die online nicht nur gut aussehen,
+            sondern Reichweite und Anfragen aufbauen wollen.
           </p>
         </AnimateOnScroll>
 
@@ -144,16 +145,16 @@ export default function JoelSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
                 <p className="text-xs font-bold tracking-widest uppercase text-[#E8400A] mb-4">
-                  Die Köpfe dahinter
+                  Das Partnerangebot
                 </p>
                 <h3 className="text-3xl font-extrabold italic text-white mb-4">
-                  Kevin & Joel
+                  2fastmedia & Partner für Video und Content
                 </h3>
                 <p className="text-[#A0A0A0] text-sm leading-relaxed mb-6">
-                  Kevin bringt die digitale Strategie, Website-Struktur, SEO und KI-Prozesse.
-                  Joel bringt die Kreativproduktion: Videos, Reels, Social-Media-Content und
-                  das Gespür für Reichweite. Zusammen decken sie den kompletten digitalen
-                  Auftritt ab – von der ersten Suche bis zur viralen Kampagne.
+                  2fastmedia bringt digitale Strategie, Website-Struktur, SEO und KI-Prozesse.
+                  Unser Partner für Videoproduktion und Social-Media-Content bringt Kreativproduktion:
+                  Videos, Reels, Kampagnen und das Gespür für Reichweite. Zusammen decken wir den
+                  kompletten digitalen Auftritt ab – von der ersten Suche bis zur viralen Kampagne.
                 </p>
 
                 {/* Platforms */}
@@ -176,10 +177,10 @@ export default function JoelSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                   </svg>
                 </div>
-                <p className="text-sm font-bold text-white mb-1">Joel</p>
+                <p className="text-sm font-bold text-white mb-1">[Name der Videoproduktionsfirma]</p>
                 <p className="text-xs text-[#555]">Video & Social Media</p>
                 <p className="text-xs text-[#444] mt-3 italic">
-                  Foto & Referenzdaten werden ergänzt
+                  Firmenname & Referenzdaten werden ergänzt
                 </p>
               </div>
             </div>

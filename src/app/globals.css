@@ -19,6 +19,25 @@
   --color-background: var(--bg);
   --color-foreground: var(--text);
   --font-sans: var(--font-plus-jakarta);
+
+  /* shadcn/ui token mapping */
+  --color-primary: #E8400A;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1C1C1C;
+  --color-secondary-foreground: #ffffff;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-muted: #141414;
+  --color-muted-foreground: #A0A0A0;
+  --color-accent: #1C1C1C;
+  --color-accent-foreground: #ffffff;
+  --color-popover: #141414;
+  --color-popover-foreground: #ffffff;
+  --color-card: #141414;
+  --color-card-foreground: #ffffff;
+  --color-border: rgba(255,255,255,0.07);
+  --color-input: rgba(255,255,255,0.07);
+  --color-ring: #E8400A;
 }
 
 html {
@@ -48,11 +67,37 @@ body {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 60s linear infinite;
+  animation: marquee 76s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse {
+  animation-direction: reverse;
+  animation-duration: 84s;
 }
 
 .marquee-wrapper:hover .animate-marquee {
   animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .animate-marquee {
+    animation-duration: 88s;
+  }
+
+  .animate-marquee-reverse {
+    animation-duration: 96s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reference-marquee {
+    display: none;
+  }
+
+  .reference-static-grid {
+    display: grid;
+  }
 }
 
 /* ── Glow pulse ── */

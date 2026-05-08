@@ -1,7 +1,7 @@
-# 2fast Media Website
+# 2fastmedia Website
 
 ## Projekt
-Agentur-Website für Kevin Balfanz / 2fast Media, Dinslaken NRW.
+Agentur-Website für 2fastmedia.
 Next.js 16.2.4, TypeScript, Tailwind CSS v4, Framer Motion.
 
 ## Lokaler Pfad
@@ -23,7 +23,7 @@ Dashboard: https://app.netlify.com/projects/2fast-media-website
 
 ## Offene To-dos (nach erfolgreichem Deploy)
 - WhatsApp-Nummer in `src/components/Contact.tsx` ersetzen (Platzhalter: 4915000000000)
-- Echtes Foto in `src/components/About.tsx` einbauen
+- Agentur-Foto oder Markenvisual in `src/components/About.tsx` einbauen
 - Instagram/LinkedIn-Links in `src/components/Footer.tsx` setzen
 - Impressum-Seite anlegen + Link in Footer
 - Datenschutz-Seite anlegen + Link in Footer

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import BrandLogo from "./BrandLogo";
 
 const serviceLinks = [
   { href: "/leistungen/webdesign", label: "Webdesign & Entwicklung", emoji: "🌐" },
@@ -10,14 +11,6 @@ const serviceLinks = [
   { href: "/leistungen/grafik-branding", label: "Grafik & Branding", emoji: "🎨" },
   { href: "/leistungen/video-content", label: "Video & Content", emoji: "🎬" },
 ];
-
-const Logo = () => (
-  <a href="#" className="text-xl font-extrabold italic tracking-tight select-none">
-    <span className="text-[#E8400A]">2</span>
-    <span className="text-white">fastmedia</span>
-    <span className="text-[#E8400A]">.</span>
-  </a>
-);
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,7 +49,7 @@ export default function Navigation() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between gap-8">
-        <Logo />
+        <BrandLogo href="/" />
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-7">
@@ -108,17 +101,17 @@ export default function Navigation() {
           </li>
 
           <li>
-            <a href="#projekte" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+            <a href="#warum" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+              Warum
+            </a>
+          </li>
+          <li>
+            <a href="/projekte" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
               Projekte
             </a>
           </li>
           <li>
-            <a href="#ueber-mich" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
-              Über mich
-            </a>
-          </li>
-          <li>
-            <a href="#kontakt" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+            <a href="/kontakt" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
               Kontakt
             </a>
           </li>
@@ -126,7 +119,7 @@ export default function Navigation() {
 
         {/* CTA */}
         <a
-          href="#kontakt"
+          href="/kontakt"
           className="hidden md:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#E8400A] text-white text-sm font-bold hover:bg-[#FF5520] transition-colors duration-200 group"
         >
           Projekt starten
@@ -203,17 +196,20 @@ export default function Navigation() {
               )}
             </AnimatePresence>
 
-            <a href="#projekte" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+            <a href="#warum" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+              Warum
+            </a>
+            <a href="#ablauf" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+              Ablauf
+            </a>
+            <a href="/projekte" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
               Projekte
             </a>
-            <a href="#ueber-mich" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
-              Über mich
-            </a>
-            <a href="#kontakt" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+            <a href="/kontakt" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
               Kontakt
             </a>
             <a
-              href="#kontakt"
+              href="/kontakt"
               onClick={closeMenu}
               className="mt-3 w-full text-center py-3 rounded-full bg-[#E8400A] text-white font-bold hover:bg-[#FF5520] transition-colors"
             >

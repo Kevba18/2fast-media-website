@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -12,11 +13,11 @@ const serviceLinks = [
 ];
 
 const Logo = () => (
-  <a href="/" className="text-xl font-extrabold italic tracking-tight select-none">
+  <Link href="/" className="text-xl font-extrabold italic tracking-tight select-none">
     <span className="text-[#E8400A]">2</span>
     <span className="text-white">fastmedia</span>
     <span className="text-[#E8400A]">.</span>
-  </a>
+  </Link>
 );
 
 export default function ServiceNavigation() {
@@ -83,7 +84,7 @@ export default function ServiceNavigation() {
                   className="absolute top-full left-0 mt-2 w-56 bg-[#141414] border border-white/10 rounded-xl shadow-xl overflow-hidden"
                 >
                   {serviceLinks.map((s) => (
-                    <a
+                    <Link
                       key={s.href}
                       href={s.href}
                       onClick={() => setDropdownOpen(false)}
@@ -91,39 +92,39 @@ export default function ServiceNavigation() {
                     >
                       <span>{s.emoji}</span>
                       {s.label}
-                    </a>
+                    </Link>
                   ))}
                   <div className="border-t border-white/5 mx-3" />
-                  <a
+                  <Link
                     href="/#leistungen"
                     onClick={() => setDropdownOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 text-sm text-[#E8400A] hover:bg-white/5 transition-colors font-medium"
                   >
                     Alle Leistungen →
-                  </a>
+                  </Link>
                 </motion.div>
               )}
             </AnimatePresence>
           </li>
 
           <li>
-            <a href="/#projekte" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
-              Projekte
-            </a>
+            <Link href="/#referenzen" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+              Referenzen
+            </Link>
           </li>
           <li>
-            <a href="/#ueber-mich" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
-              Über mich
-            </a>
+            <Link href="/#warum" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+              Warum
+            </Link>
           </li>
           <li>
-            <a href="/#kontakt" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+            <Link href="/#kontakt" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
               Kontakt
-            </a>
+            </Link>
           </li>
         </ul>
 
-        <a
+        <Link
           href="/#kontakt"
           className="hidden md:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#E8400A] text-white text-sm font-bold hover:bg-[#FF5520] transition-colors duration-200 group"
         >
@@ -135,7 +136,7 @@ export default function ServiceNavigation() {
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
           </svg>
-        </a>
+        </Link>
 
         <button
           className="md:hidden p-2 text-[#A0A0A0] hover:text-white transition-colors"
@@ -183,7 +184,7 @@ export default function ServiceNavigation() {
                 >
                   <div className="pl-3 border-l border-white/10 mb-1 flex flex-col gap-1">
                     {serviceLinks.map((s) => (
-                      <a
+                      <Link
                         key={s.href}
                         href={s.href}
                         onClick={closeMenu}
@@ -191,29 +192,29 @@ export default function ServiceNavigation() {
                       >
                         <span>{s.emoji}</span>
                         {s.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
 
-            <a href="/#projekte" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
-              Projekte
-            </a>
-            <a href="/#ueber-mich" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
-              Über mich
-            </a>
-            <a href="/#kontakt" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+            <Link href="/#referenzen" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+              Referenzen
+            </Link>
+            <Link href="/#warum" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+              Warum
+            </Link>
+            <Link href="/#kontakt" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
               Kontakt
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#kontakt"
               onClick={closeMenu}
               className="mt-3 w-full text-center py-3 rounded-full bg-[#E8400A] text-white font-bold hover:bg-[#FF5520] transition-colors"
             >
               Projekt starten
-            </a>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
