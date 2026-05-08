@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
-  title: "SEO & Online-Sichtbarkeit Dinslaken – Lokales SEO NRW | 2fast Media",
+  title: "SEO & Online-Sichtbarkeit Dinslaken – Lokales SEO NRW | 2fastmedia",
   description:
     "Damit dein Unternehmen bei Google gefunden wird. Lokales SEO, Google Unternehmensprofil & technische Optimierung für Dinslaken & NRW. Kostenlose SEO-Analyse anfragen.",
   keywords: [
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://2fastmedia.de/leistungen/online-sichtbarkeit" },
   openGraph: {
-    title: "SEO & Online-Sichtbarkeit Dinslaken – Lokales SEO NRW | 2fast Media",
+    title: "SEO & Online-Sichtbarkeit Dinslaken – Lokales SEO NRW | 2fastmedia",
     description:
       "Damit dein Unternehmen bei Google gefunden wird. Lokales SEO, Google Unternehmensprofil & technische Optimierung für Dinslaken & NRW.",
     url: "https://2fastmedia.de/leistungen/online-sichtbarkeit",
@@ -31,7 +32,7 @@ const schema = {
   name: "Online-Sichtbarkeit & Lokales SEO",
   provider: {
     "@type": "LocalBusiness",
-    name: "2fast Media",
+    name: "2fastmedia",
     url: "https://2fastmedia.de",
     address: {
       "@type": "PostalAddress",
@@ -68,7 +69,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Was kostet SEO bei 2fast Media?",
+      name: "Was kostet SEO bei 2fastmedia?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Wir bieten sowohl Einmal-Optimierungen als auch monatliche SEO-Betreuung an. Die genauen Kosten besprechen wir im kostenlosen Erstgespräch, nachdem wir deine aktuelle Sichtbarkeit analysiert haben.",
@@ -88,7 +89,7 @@ const faqSchema = {
 const benefits = [
   { icon: "📍", title: "Google Maps & Local Pack", text: "Wir optimieren dein Google Unternehmensprofil, damit du in den lokalen Suchergebnissen prominent erscheinst." },
   { icon: "🔎", title: "Keyword-Strategie", text: "Wir recherchieren die Suchbegriffe, die deine potenziellen Kunden in Dinslaken und Umgebung wirklich eingeben." },
-  { icon: "⚙️", title: "Technische SEO", text: "Ladezeiten, Core Web Vitals, mobile Darstellung – wir sorgen dafür, dass Google deine Website liebt." },
+  { icon: "⚙️", title: "Technische SEO", text: "Ladezeiten, Core Web Vitals, mobile Darstellung – technische Grundlagen, die Google und Nutzer gleichermaßen honorieren." },
   { icon: "📝", title: "Inhaltliche Optimierung", text: "Texte, Überschriften und Strukturen werden auf relevante Keywords ausgerichtet ohne dabei unnatürlich zu klingen." },
 ];
 
@@ -102,7 +103,7 @@ const steps = [
 const faqs = [
   { q: "Wie lange dauert es bis ich bei Google ranke?", a: "Erste Verbesserungen sind oft nach 4–8 Wochen sichtbar. Für stabile Top-Positionen sollte man mit 3–6 Monaten rechnen – je nach Wettbewerb und Ausgangssituation." },
   { q: "Was ist lokales SEO und warum ist es wichtig?", a: "Lokales SEO sorgt dafür, dass dein Unternehmen bei Suchen mit lokalem Bezug weit oben erscheint. Für Handwerker, Dienstleister und Einzelhändler ist das der effektivste Weg zu neuen Kunden." },
-  { q: "Was kostet SEO bei 2fast Media?", a: "Wir bieten Einmal-Optimierungen und monatliche Betreuung an. Die Kosten besprechen wir im kostenlosen Erstgespräch nach einer Analyse deiner aktuellen Sichtbarkeit." },
+  { q: "Was kostet SEO bei 2fastmedia?", a: "Wir bieten Einmal-Optimierungen und monatliche Betreuung an. Die Kosten besprechen wir im kostenlosen Erstgespräch nach einer Analyse deiner aktuellen Sichtbarkeit." },
   { q: "Brauche ich ein Google Unternehmensprofil?", a: "Ja, absolut. Das Google Unternehmensprofil ist für lokale Unternehmen einer der wichtigsten Rankingfaktoren – und komplett kostenlos. Wir optimieren es für maximale Sichtbarkeit." },
   { q: "Kann ich SEO und eine neue Website zusammen beauftragen?", a: "Ja – und das empfehlen wir sogar. Wenn wir die Website entwickeln, bauen wir technisches SEO direkt mit ein. Das spart Zeit und Kosten." },
 ];
@@ -125,9 +126,9 @@ export default function OnlineSichtbarkeitPage() {
         <div className="max-w-4xl mx-auto">
           <AnimateOnScroll>
             <nav className="flex items-center gap-2 text-xs text-[#A0A0A0] mb-8" aria-label="Breadcrumb">
-              <a href="/" className="hover:text-white transition-colors">Startseite</a>
+              <Link href="/" className="hover:text-white transition-colors">Startseite</Link>
               <span>/</span>
-              <a href="/#leistungen" className="hover:text-white transition-colors">Leistungen</a>
+              <Link href="/#leistungen" className="hover:text-white transition-colors">Leistungen</Link>
               <span>/</span>
               <span className="text-white">Online-Sichtbarkeit</span>
             </nav>
@@ -137,10 +138,10 @@ export default function OnlineSichtbarkeitPage() {
               <span className="text-[#E8400A]">Dinslaken bei Google finden</span>
             </h1>
             <p className="text-lg md:text-xl text-[#A0A0A0] max-w-2xl leading-relaxed mb-10">
-              Lokales SEO, Google Unternehmensprofil-Optimierung und technische Verbesserungen – damit dein Unternehmen in Dinslaken, Duisburg und ganz NRW bei Google oben steht und mehr Anfragen bekommt.
+              Lokales SEO, Google Unternehmensprofil-Optimierung und technische Verbesserungen – für bessere Chancen auf sichtbare Platzierungen bei relevanten Suchanfragen in Dinslaken, Duisburg und NRW.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="/#kontakt"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#E8400A] text-white font-bold hover:bg-[#FF5520] transition-all duration-200 hover:scale-105 active:scale-95"
               >
@@ -148,13 +149,13 @@ export default function OnlineSichtbarkeitPage() {
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/#leistungen"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/10 text-white font-semibold hover:border-white/30 transition-all duration-200"
               >
                 Alle Leistungen
-              </a>
+              </Link>
             </div>
           </AnimateOnScroll>
         </div>
@@ -259,7 +260,7 @@ export default function OnlineSichtbarkeitPage() {
             <p className="text-[#A0A0A0] mb-8 text-lg">
               Kostenlose SEO-Analyse für dein Unternehmen in Dinslaken, Duisburg & NRW. Wir schauen uns an wo du stehst und was möglich ist.
             </p>
-            <a
+            <Link
               href="/#kontakt"
               className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-[#E8400A] text-white font-bold text-lg hover:bg-[#FF5520] transition-all duration-200 hover:scale-105 active:scale-95"
             >
@@ -267,7 +268,7 @@ export default function OnlineSichtbarkeitPage() {
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
               </svg>
-            </a>
+            </Link>
           </AnimateOnScroll>
         </div>
       </section>
@@ -276,12 +277,12 @@ export default function OnlineSichtbarkeitPage() {
       <section className="py-20 px-5 md:px-8 bg-[#0D0D0D] border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <AnimateOnScroll className="mb-10">
-            <h2 className="text-2xl font-extrabold italic tracking-tight">Weitere Leistungen von 2fast Media</h2>
+            <h2 className="text-2xl font-extrabold italic tracking-tight">Weitere Leistungen von 2fastmedia</h2>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {otherServices.map((s, i) => (
               <AnimateOnScroll key={s.href} delay={i * 0.07}>
-                <a
+                <Link
                   href={s.href}
                   className="group flex items-start gap-4 p-5 rounded-2xl bg-[#141414] border border-white/5 hover:border-[#E8400A]/20 transition-all duration-200"
                 >
@@ -290,7 +291,7 @@ export default function OnlineSichtbarkeitPage() {
                     <p className="font-bold text-white text-sm group-hover:text-[#E8400A] transition-colors">{s.title}</p>
                     <p className="text-xs text-[#A0A0A0] mt-0.5">{s.text}</p>
                   </div>
-                </a>
+                </Link>
               </AnimateOnScroll>
             ))}
           </div>

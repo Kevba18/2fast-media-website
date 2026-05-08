@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const questions = [
@@ -126,10 +127,16 @@ export default function WebsiteCheck() {
             Wie stark ist deine{" "}
             <span className="text-[#E8400A]">aktuelle Website?</span>
           </h2>
-          <p className="text-[#A0A0A0] text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#A0A0A0] text-base leading-relaxed max-w-2xl mx-auto mb-4">
             Beantworte fünf kurze Fragen und erhalte eine ehrliche Einschätzung, wo deine Website
             gerade steht und wo Potenzial liegt.
           </p>
+          <Link
+            href="/website-check"
+            className="text-sm font-semibold text-[#555] hover:text-white transition-colors"
+          >
+            Ausführlicherer Check mit 7 Fragen →
+          </Link>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.1}>
@@ -246,8 +253,8 @@ export default function WebsiteCheck() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="#kontakt"
+                <Link
+                  href="/kontakt"
                   className="group flex-1 py-4 rounded-xl bg-[#E8400A] text-white font-bold text-sm hover:bg-[#FF5520] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
                 >
                   {result.cta}
@@ -255,7 +262,7 @@ export default function WebsiteCheck() {
                     className="group-hover:translate-x-0.5 transition-transform">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                   </svg>
-                </a>
+                </Link>
                 <button
                   onClick={handleReset}
                   className="px-6 py-4 rounded-xl border border-white/10 text-sm font-semibold text-[#A0A0A0] hover:border-white/25 hover:text-white transition-all duration-200"

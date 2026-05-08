@@ -6,6 +6,12 @@
   package = "@netlify/plugin-nextjs"
 
 [[redirects]]
+  from = "/?p=:id"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/hello-world"
   to = "/"
   status = 301
@@ -68,5 +74,15 @@
 
 [[redirects]]
   from = "/wp-admin/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-json/*"
   to = "/"
   status = 301

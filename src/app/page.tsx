@@ -5,9 +5,7 @@ import ProblemSolution from "@/components/ProblemSolution";
 import WebsiteCheck from "@/components/WebsiteCheck";
 import Services from "@/components/Services";
 import BeforeAfter from "@/components/BeforeAfter";
-import KevinSection from "@/components/KevinSection";
 import Process from "@/components/Process";
-import JoelSection from "@/components/JoelSection";
 import Audience from "@/components/Audience";
 import Projects from "@/components/Projects";
 import FAQ from "@/components/FAQ";
@@ -54,28 +52,22 @@ export default function Home() {
         {/* 5. Leistungen */}
         <Services />
 
-        {/* 6. Vorher-Nachher (NEU) */}
+        {/* 6. Vorher-Nachher */}
         <BeforeAfter />
 
-        {/* 7. Kevin persönlicher Bereich (NEU – ersetzt generische About-Sektion) */}
-        <KevinSection />
-
-        {/* 8. Ablauf / Prozess */}
+        {/* 7. Ablauf / Prozess */}
         <Process />
 
-        {/* 9. Joel & Social Media – dunkle Highlight-Sektion (NEU) */}
-        <JoelSection />
-
-        {/* 10. Für wen ist das Angebot */}
+        {/* 8. Für wen ist das Angebot */}
         <Audience />
 
-        {/* 11. Referenzen & Case Studies */}
+        {/* 9. Referenzen & Case Studies */}
         <Projects />
 
-        {/* 12. FAQ */}
+        {/* 10. FAQ */}
         <FAQ />
 
-        {/* 13. Kontakt – erweitertes Projektstart-Formular (NEU) */}
+        {/* 11. Kontakt */}
         <Contact />
       </main>
       <Footer />

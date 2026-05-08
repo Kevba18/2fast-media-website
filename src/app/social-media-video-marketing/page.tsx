@@ -7,6 +7,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
@@ -28,24 +29,6 @@ const audiences = [
   { label: "Dienstleister mit Persönlichkeit", icon: "✦" },
   { label: "Unternehmen mit Sichtbarkeitsbedarf", icon: "📡" },
   { label: "Produkte mit Erklärungsbedarf", icon: "💡" },
-];
-
-// Platzhalter – werden durch echte Daten von Joel ersetzt
-const joelReferences: {
-  client: string;
-  format: string;
-  platform: string;
-  views: string;
-  note: string;
-  link?: string;
-}[] = [
-  // {
-  //   client: "Künstler XY",
-  //   format: "Musikvideo",
-  //   platform: "YouTube",
-  //   views: "—",
-  //   note: "Daten werden ergänzt",
-  // },
 ];
 
 const formOptions = {
@@ -135,9 +118,10 @@ export default function SocialMediaVideoPage() {
               für Marken, Künstler und Unternehmen
             </h1>
             <p className="text-base md:text-xl text-[#A0A0A0] leading-relaxed max-w-2xl mb-10">
-              Gemeinsam verbinden Kevin und Joel Website-Strategie, Content-Produktion und
-              Reichweitenaufbau. Für Unternehmen, Events, Künstler und Marken, die nicht nur
-              posten wollen, sondern sichtbar werden möchten.
+              2fastmedia verbindet Website-Strategie, Content-Produktion und Reichweitenaufbau –
+              gemeinsam mit einem spezialisierten Partner für Video und Social Media. Für
+              Unternehmen, Events, Künstler und Marken, die nicht nur posten wollen, sondern
+              sichtbar werden möchten.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -150,12 +134,12 @@ export default function SocialMediaVideoPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
               </a>
-              <a
+              <Link
                 href="/"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/15 text-white font-semibold text-sm hover:border-white/40 hover:bg-white/5 transition-all"
               >
                 Zurück zur Hauptseite
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -173,7 +157,8 @@ export default function SocialMediaVideoPage() {
                 Views ohne Ziel sind verschwendete Reichweite. Viele Unternehmen und Künstler
                 investieren in Content, aber ohne eine saubere Zielseite, ein klares Angebot und
                 eine Struktur, die Besucher zu echten Anfragen führt, verpufft das Potenzial.
-                Genau hier setzen Kevin und Joel gemeinsam an.
+                Genau hier setzt das gemeinsame Angebot von 2fastmedia und unserem Partner für
+                Videoproduktion an.
               </p>
             </AnimateOnScroll>
           </div>
@@ -199,74 +184,6 @@ export default function SocialMediaVideoPage() {
                 </AnimateOnScroll>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Referenzen Joel – Platzhalter */}
-        <section className="py-20 px-5 md:px-8 bg-[#0D0D0D]">
-          <div className="max-w-6xl mx-auto">
-            <AnimateOnScroll className="mb-12">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#E8400A] mb-5">
-                Referenzen von Joel
-              </p>
-              <h2 className="text-3xl md:text-4xl font-extrabold italic tracking-tight mb-4">
-                Ausgewählte Projekte
-              </h2>
-            </AnimateOnScroll>
-
-            {joelReferences.length === 0 ? (
-              <AnimateOnScroll>
-                <div className="rounded-3xl bg-[#141414] border border-white/5 p-10 text-center">
-                  <p className="text-[#555] text-sm italic mb-2">
-                    Referenzen werden aktuell zusammengestellt
-                  </p>
-                  <p className="text-xs text-[#444]">
-                    Sobald Joel die Daten liefert, werden hier echte Projekte mit Format, Plattform,
-                    Views und Link angezeigt.
-                  </p>
-                </div>
-              </AnimateOnScroll>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {joelReferences.map((ref, i) => (
-                  <AnimateOnScroll key={i} delay={i * 0.08}>
-                    <div className="h-full rounded-2xl bg-[#141414] border border-white/5 p-6">
-                      <p className="text-lg font-bold text-white mb-1">{ref.client}</p>
-                      <p className="text-xs text-[#E8400A] font-semibold mb-3">{ref.format} · {ref.platform}</p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-2xl font-black italic text-white">{ref.views}</span>
-                        <span className="text-xs text-[#555]">Views</span>
-                      </div>
-                      {ref.note && <p className="text-xs text-[#666] mt-3">{ref.note}</p>}
-                    </div>
-                  </AnimateOnScroll>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* Stats placeholder */}
-        <section className="py-16 px-5 md:px-8 bg-[#141414]">
-          <div className="max-w-6xl mx-auto">
-            <AnimateOnScroll>
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#555] mb-8 text-center">
-                Zahlenblock – wird ergänzt, sobald echte Daten vorliegen
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[
-                  { label: "Views gesamt", value: "—" },
-                  { label: "Produzierte Videos", value: "—" },
-                  { label: "Betreute Künstler", value: "—" },
-                  { label: "Events dokumentiert", value: "—" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center rounded-2xl bg-[#0D0D0D] border border-white/5 py-8">
-                    <p className="text-4xl font-black italic text-[#E8400A]/50 mb-1">{s.value}</p>
-                    <p className="text-xs text-[#555] font-semibold">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </AnimateOnScroll>
           </div>
         </section>
 

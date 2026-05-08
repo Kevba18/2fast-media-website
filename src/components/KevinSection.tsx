@@ -3,11 +3,11 @@ import AnimateOnScroll from "./AnimateOnScroll";
 const strengths = [
   {
     label: "Direkte Kommunikation",
-    text: "Keine Agenturschleifen, keine unklaren Zuständigkeiten – du sprichst immer direkt mit Kevin.",
+    text: "Keine Agenturschleifen, keine unklaren Zuständigkeiten – du sprichst direkt mit den Menschen, die dein Projekt umsetzen.",
   },
   {
     label: "Strategie & Umsetzung in einer Hand",
-    text: "Von der Positionierung bis zur fertigen Website denkt Kevin jeden Schritt mit.",
+    text: "Von der Positionierung bis zur fertigen Website wird jeder Schritt strukturiert mitgedacht.",
   },
   {
     label: "Webdesign, SEO & KI verbunden",
@@ -32,7 +32,7 @@ export default function KevinSection() {
             {/* Foto-Platzhalter */}
             <div className="relative flex-1 flex flex-col">
               <p className="text-xs font-semibold tracking-widest uppercase text-[#E8400A] mb-5">
-                Direkt mit Kevin arbeiten
+                Direkt mit 2fastmedia arbeiten
               </p>
 
               {/* Avatar placeholder */}
@@ -71,14 +71,15 @@ export default function KevinSection() {
               Warum 2fastmedia
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold italic tracking-tight mb-6 leading-tight">
-              Direkt mit Kevin arbeiten –{" "}
+              Direkt mit 2fastmedia arbeiten –{" "}
               <span className="text-[#E8400A]">nicht mit einer anonymen Agentur</span>
             </h2>
             <p className="text-[#A0A0A0] text-sm md:text-base leading-relaxed mb-10">
-              Du sprichst direkt mit der Person, die dein Projekt versteht, strukturiert und mit
-              umsetzt. Keine langen Agenturschleifen, keine unklaren Zuständigkeiten, kein
-              unnötiges Fachchinesisch. 2fastmedia verbindet Webdesign, Sichtbarkeit und
-              KI-Prozesse so, dass daraus ein klarer digitaler Auftritt entsteht.
+              Bei 2fastmedia sprichst du direkt mit Menschen, die dein Projekt verstehen,
+              strukturieren und mit umsetzen. Keine langen Agenturschleifen, keine unklaren
+              Zuständigkeiten, kein unnötiges Fachchinesisch. Stattdessen bekommst du einen
+              klaren digitalen Auftritt, der Webdesign, Sichtbarkeit und KI-Prozesse sinnvoll
+              miteinander verbindet.
             </p>
           </AnimateOnScroll>
 

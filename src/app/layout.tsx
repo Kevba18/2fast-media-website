@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import ConsentProvider from "@/components/ConsentProvider";
+import { siteUrl } from "@/lib/site";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -12,66 +14,73 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Webdesign & KI-Integration Dinslaken | 2fast Media",
+  title: "2fastmedia | Websites, Sichtbarkeit und KI Prozesse",
   description:
-    "2fast Media – Professionelles Webdesign, Online-Sichtbarkeit & KI-Integration für Unternehmen im Ruhrgebiet. Jetzt kostenloses Erstgespräch buchen.",
+    "2fastmedia entwickelt moderne Websites, stärkt Google Sichtbarkeit und integriert digitale Prozesse für Unternehmen in NRW und deutschlandweit.",
   keywords: [
-    "Webdesign Dinslaken",
+    "Webdesign NRW",
     "Webdesign Duisburg",
     "SEO Ruhrgebiet",
     "KI-Integration NRW",
     "Webdesign Agentur NRW",
     "Google Sichtbarkeit",
-    "2fast Media",
-    "Webentwicklung Dinslaken",
+    "2fastmedia",
+    "Webentwicklung NRW",
   ],
-  authors: [{ name: "Kevin Balfanz", url: "https://2fastmedia.de" }],
-  creator: "2fast Media",
-  metadataBase: new URL("https://2fastmedia.de"),
+  authors: [{ name: "2fastmedia", url: "https://2fastmedia.de" }],
+  creator: "2fastmedia",
+  metadataBase: new URL(siteUrl),
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://2fastmedia.de",
-    title: "Webdesign & KI-Integration Dinslaken | 2fast Media",
+    url: siteUrl,
+    title: "2fastmedia | Websites, Sichtbarkeit und KI Prozesse",
     description:
-      "Professionelles Webdesign, Online-Sichtbarkeit & KI-Integration für Unternehmen im Ruhrgebiet.",
-    siteName: "2fast Media",
+      "Moderne Websites, Google Sichtbarkeit und KI Prozesse für Unternehmen in NRW und deutschlandweit.",
+    siteName: "2fastmedia",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webdesign & KI-Integration Dinslaken | 2fast Media",
+    title: "2fastmedia | Websites, Sichtbarkeit und KI Prozesse",
     description:
-      "Professionelles Webdesign, Online-Sichtbarkeit & KI-Integration für Unternehmen im Ruhrgebiet.",
+      "Moderne Websites, Google Sichtbarkeit und KI Prozesse für Unternehmen in NRW und deutschlandweit.",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://2fastmedia.de" },
+  alternates: { canonical: siteUrl },
 };
 
-const schemaOrg = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "2fast Media",
-  description:
-    "Professionelles Webdesign, Online-Sichtbarkeit und KI-Integration für Unternehmen im Ruhrgebiet.",
-  url: "https://2fastmedia.de",
-  email: "info@2fastmedia.de",
-  founder: { "@type": "Person", name: "Kevin Balfanz" },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Dinslaken",
-    addressRegion: "NRW",
-    addressCountry: "DE",
+const schemaOrg = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "2fastmedia",
+    url: siteUrl,
+    email: "info@2fastmedia.de",
   },
-  areaServed: ["Dinslaken", "Duisburg", "Ruhrgebiet", "NRW"],
-  serviceType: ["Webdesign", "SEO", "KI-Integration", "Online-Marketing"],
-  priceRange: "€€",
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "2fastmedia",
+    description:
+      "Webdesign, SEO, Online Sichtbarkeit, KI Integration, Branding und Content für lokale Unternehmen.",
+    url: siteUrl,
+    email: "info@2fastmedia.de",
+    areaServed: ["Dinslaken", "Duisburg", "Wesel", "Oberhausen", "Voerde", "Hünxe", "Ruhrgebiet", "NRW"],
+    serviceType: ["Webdesign", "SEO", "KI Integration", "Branding", "Content"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "2fastmedia",
+    url: siteUrl,
+  },
+];
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" className={`${plusJakartaSans.variable} scroll-smooth`}>
+    <html lang="de" className={`${plusJakartaSans.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <Script
           id="schema-org"
@@ -81,6 +90,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-[#0D0D0D] text-white antialiased">
         {children}
+        <ConsentProvider />
       </body>
     </html>
   );

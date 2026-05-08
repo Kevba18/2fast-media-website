@@ -1,0 +1,700 @@
+"use client";
+
+import { useState, useMemo, useRef, useEffect } from "react";
+import Link from "next/link";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+
+const WHATSAPP_URL =
+  "https://wa.me/4920649922191?text=Hallo%202fastmedia%2C%20ich%20m%C3%B6chte%20mein%20Projekt%20besprechen.";
+
+const LEISTUNGEN = [
+  "Neue Website",
+  "Website Relaunch",
+  "SEO und Google Sichtbarkeit",
+  "Landingpage",
+  "Branding",
+  "Social Media",
+  "Video Content",
+  "KI Automatisierung",
+  "Ich bin mir noch nicht sicher",
+];
+
+const ZIELE = [
+  "Mehr Anfragen",
+  "Moderner auftreten",
+  "Besser bei Google gefunden werden",
+  "Social Media professioneller nutzen",
+  "Prozesse automatisieren",
+  "Neues Angebot verkaufen",
+  "Mehr Reichweite aufbauen",
+];
+
+const leistungsKategorien: Record<string, string> = {
+  "Neue Website": "Website",
+  "Website Relaunch": "Website",
+  Landingpage: "Website",
+  "SEO und Google Sichtbarkeit": "Sichtbarkeit",
+  Branding: "Content",
+  "Social Media": "Content",
+  "Video Content": "Content",
+  "KI Automatisierung": "KI Prozesse",
+};
+
+type Fields = {
+  name: string;
+  unternehmen: string;
+  email: string;
+  telefon: string;
+  website_status: string;
+  website_url: string;
+  leistungen: string[];
+  branche: string;
+  dringlichkeit: string;
+  budget: string;
+  ziele: string[];
+  nachricht: string;
+  datenschutz: boolean;
+};
+
+const initialFields: Fields = {
+  name: "",
+  unternehmen: "",
+  email: "",
+  telefon: "",
+  website_status: "",
+  website_url: "",
+  leistungen: [],
+  branche: "",
+  dringlichkeit: "",
+  budget: "",
+  ziele: [],
+  nachricht: "",
+  datenschutz: false,
+};
+
+const kontaktFaqs = [
+  {
+    q: "Wie schnell bekomme ich eine Antwort?",
+    a: "In der Regel innerhalb von 24 Stunden — oft auch am selben Tag. Wenn etwas dringend ist, einfach kurz per WhatsApp schreiben.",
+  },
+  {
+    q: "Muss ich beim ersten Gespräch schon alles wissen?",
+    a: "Nein. Es reicht, wenn du weißt, was du erreichen möchtest. Den Rest erarbeiten wir gemeinsam. Kein Vorwissen nötig.",
+  },
+  {
+    q: "Entstehen durch die Anfrage schon Kosten?",
+    a: "Nein. Die Anfrage und das erste Gespräch sind kostenlos und unverbindlich. Erst wenn du ein konkretes Angebot annimmst, entstehen Kosten.",
+  },
+  {
+    q: "Kann 2fastmedia auch kurzfristig starten?",
+    a: "Abhängig von der aktuellen Auslastung. Gib beim Formular an, wie dringend dein Projekt ist — dann kann ich das realistisch einschätzen.",
+  },
+  {
+    q: "Arbeitet 2fastmedia auch mit Unternehmen außerhalb von NRW?",
+    a: "Ja, deutschlandweit. Abstimmungen laufen per Videocall, E-Mail oder gemeinsamer Projektstruktur.",
+  },
+];
+
+function SelectField({
+  id,
+  name,
+  value,
+  onChange,
+  options,
+  placeholder,
+}: {
+  id?: string;
+  name: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: { label: string; value: string }[];
+  placeholder: string;
+}) {
+  return (
+    <div className="relative">
+      <select
+        id={id}
+        name={name}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={`w-full px-4 py-3 rounded-xl bg-[#1C1C1C] border border-white/8 text-sm focus:outline-none focus:border-[#E8400A]/40 transition-colors appearance-none cursor-pointer pr-10 ${
+          value === "" ? "text-white/30" : "text-white"
+        }`}
+      >
+        <option value="" disabled>{placeholder}</option>
+        {options.map((o) => (
+          <option key={o.value} value={o.value} className="text-white bg-[#1C1C1C]">
+            {o.label}
+          </option>
+        ))}
+      </select>
+      <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#666]">
+        <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+function MultiSelectDropdown({
+  options,
+  selected,
+  onChange,
+  placeholder,
+}: {
+  options: string[];
+  selected: string[];
+  onChange: (v: string[]) => void;
+  placeholder: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const displayText =
+    selected.length === 0
+      ? placeholder
+      : selected.length === 1
+      ? selected[0]
+      : `${selected.length} ausgewählt`;
+
+  const toggle = (opt: string) =>
+    onChange(selected.includes(opt) ? selected.filter((v) => v !== opt) : [...selected, opt]);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className={`w-full px-4 py-3 rounded-xl bg-[#1C1C1C] border text-sm text-left focus:outline-none transition-colors flex items-center justify-between gap-2 ${
+          open ? "border-[#E8400A]/40" : "border-white/8"
+        } ${selected.length === 0 ? "text-white/30" : "text-white"}`}
+      >
+        <span className="truncate">{displayText}</span>
+        <svg
+          width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
+          className={`shrink-0 text-[#666] transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {open && (
+        <div className="absolute top-full left-0 right-0 z-50 mt-1.5 rounded-xl bg-[#1C1C1C] border border-white/10 shadow-[0_16px_40px_rgba(0,0,0,0.5)] overflow-hidden">
+          <div className="max-h-56 overflow-y-auto">
+            {options.map((opt) => {
+              const checked = selected.includes(opt);
+              return (
+                <button
+                  key={opt}
+                  type="button"
+                  onClick={() => toggle(opt)}
+                  className="w-full px-4 py-3 text-sm text-left flex items-center gap-3 hover:bg-white/[0.06] transition-colors border-b border-white/5 last:border-0"
+                >
+                  <span className={`w-4 h-4 rounded border-2 shrink-0 flex items-center justify-center transition-colors ${checked ? "border-[#E8400A] bg-[#E8400A]" : "border-white/20"}`}>
+                    {checked && (
+                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                        <path d="M1.5 4L3.5 6L6.5 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </span>
+                  <span className={checked ? "text-white" : "text-[#A0A0A0]"}>{opt}</span>
+                </button>
+              );
+            })}
+          </div>
+          {selected.length > 0 && (
+            <div className="px-4 py-2.5 border-t border-white/8 flex items-center justify-between">
+              <span className="text-xs text-[#E8400A] font-semibold">{selected.length} ausgewählt</span>
+              <button type="button" onClick={() => onChange([])} className="text-xs text-[#555] hover:text-white transition-colors">
+                Auswahl löschen
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function FieldLabel({ children }: { children: React.ReactNode }) {
+  return <p className="text-xs font-bold tracking-wide uppercase text-[#A0A0A0] mb-3">{children}</p>;
+}
+
+export default function KontaktPage() {
+  const [fields, setFields] = useState<Fields>(initialFields);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const focusScore = useMemo(() => {
+    const counts: Record<string, number> = { Website: 0, Sichtbarkeit: 0, Content: 0, "KI Prozesse": 0 };
+    fields.leistungen.forEach((l) => { const cat = leistungsKategorien[l]; if (cat) counts[cat]++; });
+    fields.ziele.forEach((z) => {
+      if (z === "Besser bei Google gefunden werden") counts["Sichtbarkeit"]++;
+      if (z === "Prozesse automatisieren") counts["KI Prozesse"]++;
+      if (z === "Social Media professioneller nutzen" || z === "Mehr Reichweite aufbauen") counts["Content"]++;
+      if (z === "Mehr Anfragen" || z === "Moderner auftreten" || z === "Neues Angebot verkaufen") counts["Website"]++;
+    });
+    const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
+    return Object.fromEntries(Object.entries(counts).map(([k, v]) => [k, Math.round((v / total) * 100)]));
+  }, [fields.leistungen, fields.ziele]);
+
+  const showFocus = fields.leistungen.length > 0 || fields.ziele.length > 0;
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (!fields.datenschutz) { setError("Bitte stimme der Datenschutzerklärung zu."); return; }
+    setError("");
+    setLoading(true);
+    const body: Record<string, string> = {
+      "form-name": "projektstart",
+      source: "kontaktseite",
+      name: fields.name,
+      unternehmen: fields.unternehmen,
+      email: fields.email,
+      telefon: fields.telefon,
+      website_status: fields.website_status,
+      website_url: fields.website_url,
+      leistungen: fields.leistungen.join(", "),
+      branche: fields.branche,
+      dringlichkeit: fields.dringlichkeit,
+      budget: fields.budget,
+      ziele: fields.ziele.join(", "),
+      nachricht: fields.nachricht,
+    };
+    try {
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(body).toString(),
+      });
+      if (!response.ok) throw new Error("Fehler");
+      setSubmitted(true);
+    } catch {
+      setError("Die Nachricht konnte gerade nicht gesendet werden. Bitte versuch es erneut oder schreib direkt per E-Mail.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-[#0D0D0D] text-white">
+
+        {/* Header */}
+        <section className="pt-32 pb-16 px-5 md:px-8 bg-[#0D0D0D] relative overflow-hidden">
+          <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-[#E8400A]/5 blur-[120px]" />
+          <div className="max-w-6xl mx-auto relative">
+            <Link href="/" className="mb-8 inline-flex text-sm font-semibold text-[#A0A0A0] hover:text-white transition-colors">
+              ← Zurück zur Startseite
+            </Link>
+            <div className="mt-4 max-w-3xl">
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#E8400A] mb-4">
+                Projekt starten
+              </p>
+              <h1 className="text-5xl md:text-6xl font-extrabold italic tracking-tight mb-5">
+                Lass uns über dein Projekt sprechen
+              </h1>
+              <p className="text-[#A0A0A0] text-base md:text-lg leading-relaxed">
+                Erzähl kurz, worum es geht. Danach bekommst du eine ehrliche Einschätzung,
+                was sinnvoll ist und wie der nächste Schritt aussehen kann.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Form + sidebar */}
+        <section className="py-12 px-5 md:px-8 bg-[#0D0D0D]">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 items-start">
+
+              {/* Form */}
+              <AnimateOnScroll>
+                {submitted ? (
+                  <div className="flex flex-col items-center justify-center p-12 rounded-3xl bg-[#141414] border border-[#E8400A]/20 text-center min-h-[400px]">
+                    <div className="w-16 h-16 rounded-full bg-[#E8400A]/10 border border-[#E8400A]/25 flex items-center justify-center mx-auto mb-5">
+                      <svg width="28" height="28" fill="none" stroke="#E8400A" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                    </div>
+                    <h2 className="text-xl font-bold mb-2">Anfrage eingegangen!</h2>
+                    <p className="text-[#A0A0A0] text-sm max-w-sm mb-6">
+                      Danke für deine Anfrage. Du bekommst innerhalb von 24 Stunden eine erste Einschätzung — meist deutlich schneller.
+                    </p>
+                    <Link href="/" className="text-sm font-semibold text-[#E8400A] hover:text-[#FF5520] transition-colors">
+                      Zurück zur Startseite →
+                    </Link>
+                  </div>
+                ) : (
+                  <form
+                    name="projektstart"
+                    method="POST"
+                    onSubmit={handleSubmit}
+                    className="rounded-3xl bg-[#141414] border border-white/5 p-7 md:p-8 space-y-6"
+                  >
+                    <input type="hidden" name="form-name" value="projektstart" />
+                    <input type="hidden" name="source" value="kontaktseite" />
+                    <input type="hidden" name="bot-field" />
+
+                    {/* Kontaktdaten */}
+                    <div>
+                      <FieldLabel>Kontakt</FieldLabel>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {[
+                          { id: "name", label: "Name *", type: "text", placeholder: "Max Mustermann", required: true },
+                          { id: "unternehmen", label: "Unternehmen", type: "text", placeholder: "Muster GmbH", required: false },
+                          { id: "email", label: "E-Mail *", type: "email", placeholder: "max@firma.de", required: true },
+                          { id: "telefon", label: "Telefon / WhatsApp", type: "tel", placeholder: "+49 151 ...", required: false },
+                        ].map((f) => (
+                          <div key={f.id}>
+                            <label className="block text-xs font-semibold text-[#A0A0A0] mb-1.5" htmlFor={`kontakt-${f.id}`}>
+                              {f.label}
+                            </label>
+                            <input
+                              id={`kontakt-${f.id}`} name={f.id} type={f.type} required={f.required}
+                              placeholder={f.placeholder}
+                              value={fields[f.id as keyof Fields] as string}
+                              onChange={(e) => setFields((p) => ({ ...p, [f.id]: e.target.value }))}
+                              className="w-full px-4 py-3 rounded-xl bg-[#1C1C1C] border border-white/8 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#E8400A]/40 transition-colors"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Website + Branche */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <FieldLabel>Website vorhanden?</FieldLabel>
+                        <SelectField
+                          name="website_status"
+                          value={fields.website_status}
+                          onChange={(v) => setFields((p) => ({ ...p, website_status: v, website_url: "" }))}
+                          placeholder="Bitte auswählen"
+                          options={[
+                            { label: "Ja, Link eintragen", value: "ja_link" },
+                            { label: "Ja, aber ich bin unzufrieden", value: "ja_unzufrieden" },
+                            { label: "Nein, noch keine Website", value: "nein" },
+                          ]}
+                        />
+                        {fields.website_status && fields.website_status !== "nein" && (
+                          <input
+                            name="website_url" type="url"
+                            placeholder="https://deine-website.de"
+                            value={fields.website_url}
+                            onChange={(e) => setFields((p) => ({ ...p, website_url: e.target.value }))}
+                            className="mt-3 w-full px-4 py-3 rounded-xl bg-[#1C1C1C] border border-white/8 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#E8400A]/40 transition-colors"
+                          />
+                        )}
+                      </div>
+                      <div>
+                        <FieldLabel>Branche</FieldLabel>
+                        <SelectField
+                          name="branche"
+                          value={fields.branche}
+                          onChange={(v) => setFields((p) => ({ ...p, branche: v }))}
+                          placeholder="Branche wählen"
+                          options={[
+                            { label: "Handwerk", value: "Handwerk" },
+                            { label: "Dienstleistung", value: "Dienstleistung" },
+                            { label: "Praxis oder Gesundheit", value: "Praxis oder Gesundheit" },
+                            { label: "Gastronomie", value: "Gastronomie" },
+                            { label: "Coaching oder Beratung", value: "Coaching oder Beratung" },
+                            { label: "Verein", value: "Verein" },
+                            { label: "Event oder Musik", value: "Event oder Musik" },
+                            { label: "Künstler oder Musik", value: "Künstler oder Musik" },
+                            { label: "Sonstiges", value: "Sonstiges" },
+                          ]}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Dringlichkeit + Budget */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <FieldLabel>Dringlichkeit</FieldLabel>
+                        <SelectField
+                          name="dringlichkeit"
+                          value={fields.dringlichkeit}
+                          onChange={(v) => setFields((p) => ({ ...p, dringlichkeit: v }))}
+                          placeholder="Zeitrahmen wählen"
+                          options={[
+                            { label: "So schnell wie möglich", value: "So schnell wie möglich" },
+                            { label: "In den nächsten 4 Wochen", value: "In den nächsten 4 Wochen" },
+                            { label: "In den nächsten 3 Monaten", value: "In den nächsten 3 Monaten" },
+                            { label: "Erstmal Beratung", value: "Erstmal Beratung" },
+                          ]}
+                        />
+                      </div>
+                      <div>
+                        <FieldLabel>Budget-Orientierung</FieldLabel>
+                        <SelectField
+                          name="budget"
+                          value={fields.budget}
+                          onChange={(v) => setFields((p) => ({ ...p, budget: v }))}
+                          placeholder="Budget wählen"
+                          options={[
+                            { label: "Unter 1.000 €", value: "Unter 1.000 €" },
+                            { label: "1.000 – 2.500 €", value: "1.000 – 2.500 €" },
+                            { label: "2.500 – 5.000 €", value: "2.500 – 5.000 €" },
+                            { label: "Über 5.000 €", value: "Über 5.000 €" },
+                            { label: "Noch offen", value: "Noch offen" },
+                          ]}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Leistungen */}
+                    <div>
+                      <FieldLabel>Worum geht es? (Mehrfachauswahl)</FieldLabel>
+                      <MultiSelectDropdown
+                        options={LEISTUNGEN}
+                        selected={fields.leistungen}
+                        onChange={(v) => setFields((p) => ({ ...p, leistungen: v }))}
+                        placeholder="Leistungen auswählen"
+                      />
+                    </div>
+
+                    {/* Ziele */}
+                    <div>
+                      <FieldLabel>Ziel des Projekts (Mehrfachauswahl)</FieldLabel>
+                      <MultiSelectDropdown
+                        options={ZIELE}
+                        selected={fields.ziele}
+                        onChange={(v) => setFields((p) => ({ ...p, ziele: v }))}
+                        placeholder="Ziele auswählen"
+                      />
+                    </div>
+
+                    {/* Nachricht */}
+                    <div>
+                      <label className="block text-xs font-semibold text-[#A0A0A0] mb-1.5" htmlFor="kontakt-nachricht">
+                        Kurze Nachricht (optional)
+                      </label>
+                      <textarea
+                        id="kontakt-nachricht" name="nachricht" rows={4}
+                        placeholder="Was soll ich wissen, bevor wir sprechen?"
+                        value={fields.nachricht}
+                        onChange={(e) => setFields((p) => ({ ...p, nachricht: e.target.value }))}
+                        className="w-full px-4 py-3 rounded-xl bg-[#1C1C1C] border border-white/8 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#E8400A]/40 transition-colors resize-none"
+                      />
+                    </div>
+
+                    {/* Datenschutz */}
+                    <div>
+                      <label className="flex items-start gap-3 cursor-pointer group">
+                        <button
+                          type="button"
+                          onClick={() => setFields((p) => ({ ...p, datenschutz: !p.datenschutz }))}
+                          className={`mt-0.5 w-5 h-5 rounded border-2 shrink-0 flex items-center justify-center transition-colors ${
+                            fields.datenschutz ? "border-[#E8400A] bg-[#E8400A]" : "border-white/25 group-hover:border-white/40"
+                          }`}
+                        >
+                          {fields.datenschutz && (
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                              <path d="M2 5L4.5 7.5L8 3" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          )}
+                        </button>
+                        <span className="text-xs text-[#A0A0A0] leading-relaxed">
+                          Ich habe die{" "}
+                          <Link href="/datenschutz" className="text-white underline hover:text-[#E8400A] transition-colors">
+                            Datenschutzerklärung
+                          </Link>{" "}
+                          gelesen und stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden.*
+                        </span>
+                      </label>
+                    </div>
+
+                    {error && (
+                      <p className="rounded-xl border border-red-500/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                        {error}
+                      </p>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={loading || !fields.name || !fields.email}
+                      className="group w-full py-4 rounded-xl bg-[#E8400A] text-white font-bold text-sm hover:bg-[#FF5520] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+                    >
+                      {loading ? "Wird gesendet..." : (
+                        <>
+                          Projekt kostenlos einschätzen lassen
+                          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
+                            className="group-hover:translate-x-0.5 transition-transform">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                          </svg>
+                        </>
+                      )}
+                    </button>
+
+                    <p className="text-xs text-[#555] text-center">
+                      Kein Spam. Keine Weitergabe. Nur echte Projektgespräche.
+                    </p>
+                  </form>
+                )}
+              </AnimateOnScroll>
+
+              {/* Sidebar */}
+              <AnimateOnScroll delay={0.1}>
+                <div className="space-y-5 lg:sticky lg:top-28">
+
+                  {/* Focus score */}
+                  {showFocus && (
+                    <div className="rounded-3xl bg-[#141414] border border-white/5 p-6">
+                      <p className="text-xs font-bold tracking-widest uppercase text-[#E8400A] mb-4">
+                        Dein Fokus
+                      </p>
+                      <div className="space-y-3">
+                        {Object.entries(focusScore).map(([label, pct]) => (
+                          <div key={label}>
+                            <div className="flex justify-between text-xs mb-1.5">
+                              <span className="font-semibold text-white">{label}</span>
+                              <span className="text-[#A0A0A0]">{pct}%</span>
+                            </div>
+                            <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+                              <div className="h-full rounded-full bg-[#E8400A] transition-all duration-700" style={{ width: `${pct}%` }} />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Kontaktalternativen */}
+                  <div className="rounded-3xl bg-[#141414] border border-white/5 p-6">
+                    <p className="text-xs font-bold tracking-widest uppercase text-[#555] mb-5">
+                      Direkt Kontakt
+                    </p>
+                    <div className="space-y-4">
+                      <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-4 group"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center shrink-0">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-white group-hover:text-[#25D366] transition-colors">WhatsApp</p>
+                          <p className="text-xs text-[#555]">Direkte Nachricht senden</p>
+                        </div>
+                      </a>
+                      <a
+                        href="mailto:info@2fastmedia.de"
+                        className="flex items-center gap-4 group"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                          <svg width="18" height="18" fill="none" stroke="#A0A0A0" strokeWidth="1.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-white group-hover:text-[#E8400A] transition-colors">info@2fastmedia.de</p>
+                          <p className="text-xs text-[#555]">Per E-Mail schreiben</p>
+                        </div>
+                      </a>
+                      <a
+                        href="tel:+4920649922191"
+                        className="flex items-center gap-4 group"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                          <svg width="18" height="18" fill="none" stroke="#A0A0A0" strokeWidth="1.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-white group-hover:text-[#E8400A] transition-colors">+49 2064 9922191</p>
+                          <p className="text-xs text-[#555]">Telefonisch erreichbar</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Was passiert danach */}
+                  <div className="rounded-3xl bg-[#141414] border border-white/5 p-6">
+                    <p className="text-xs font-bold tracking-widest uppercase text-[#555] mb-5">
+                      Was passiert danach
+                    </p>
+                    <div className="space-y-4">
+                      {[
+                        { n: "01", title: "Erste Einschätzung", text: "Innerhalb von 24 h meldest du dich mit einem kurzen Feedback zur Anfrage." },
+                        { n: "02", title: "Kurzes Gespräch", text: "15–20 Minuten per Video oder Telefon — kein Verkaufsgespräch, sondern echte Klärung." },
+                        { n: "03", title: "Konkretes Angebot", text: "Wenn es passt, bekommst du ein klares Angebot mit Umfang, Zeitplan und Kosten." },
+                      ].map(({ n, title, text }) => (
+                        <div key={n} className="flex gap-3">
+                          <span className="text-xs font-bold text-[#E8400A] mt-0.5 shrink-0">{n}</span>
+                          <div>
+                            <p className="text-sm font-bold text-white mb-0.5">{title}</p>
+                            <p className="text-xs text-[#555] leading-relaxed">{text}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-20 px-5 md:px-8 bg-[#141414]">
+          <div className="max-w-3xl mx-auto">
+            <AnimateOnScroll className="text-center mb-12">
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#E8400A] mb-4">FAQ</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold italic tracking-tight">
+                Häufige Fragen zur Zusammenarbeit
+              </h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll>
+              <div className="divide-y divide-white/5 rounded-2xl border border-white/5 bg-[#1C1C1C] overflow-hidden">
+                {kontaktFaqs.map((faq, i) => {
+                  const isOpen = openFaq === i;
+                  return (
+                    <div key={faq.q}>
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaq(isOpen ? null : i)}
+                        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-white/[0.03] transition-colors"
+                        aria-expanded={isOpen}
+                      >
+                        <span className="text-sm font-bold text-white leading-snug">{faq.q}</span>
+                        <span className={`shrink-0 w-7 h-7 rounded-full border border-white/10 flex items-center justify-center text-[#E8400A] transition-transform duration-300 ${isOpen ? "rotate-180 bg-[#E8400A]/10 border-[#E8400A]/25" : ""}`}>
+                          <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </span>
+                      </button>
+                      {isOpen && (
+                        <div className="px-6 pb-6">
+                          <p className="text-sm leading-relaxed text-[#A0A0A0]">{faq.a}</p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}

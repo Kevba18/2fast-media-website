@@ -4,26 +4,16 @@ import { siteUrl } from "@/lib/site";
 
 const staticRoutes = [
   "",
+  "/projekte",
+  "/website-check",
   "/leistungen/webdesign",
   "/leistungen/online-sichtbarkeit",
   "/leistungen/ki-integration",
   "/leistungen/grafik-branding",
   "/leistungen/video-content",
-  // Social Media & Video Kooperationsseite (Freigabe durch Kevin erforderlich)
   "/social-media-video-marketing",
-  // SEO-Unterseiten – geplant, noch nicht alle aktiv
-  // "/webdesign-nrw",
-  // "/website-relaunch",
-  // "/seo-lokale-unternehmen",
-  // "/ki-integration-unternehmen",
-  // "/landingpages-kampagnen",
-  // "/branding-grafikdesign",
-  // "/content-erstellung",
-  // "/webdesign-handwerker",
-  // "/webdesign-dienstleister",
-  // "/webdesign-praxen-studios",
-  // "/referenzen",
-  // "/website-check",
+  "/impressum",
+  "/datenschutz",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
