@@ -56,7 +56,7 @@ export const projects: Project[] = [
   },
   {
     title: "HSR Bauunternehmen",
-    url: null,
+    url: "https://hsr-bauunternehmen.de",
     category: "Webdesign · Handwerker Website · Lokale Dienstleistung",
     description:
       "Klarer Auftritt für Handwerksarbeiten in Duisburg: Trockenbau, Malerarbeiten, Innenausbau und Kellersanierung mit direkter Kontaktführung.",
