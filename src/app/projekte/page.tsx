@@ -130,19 +130,6 @@ export default function ProjektePage() {
               </p>
             </div>
 
-            {/* Stats row */}
-            <div className="mt-10 flex flex-wrap gap-8 border-t border-white/5 pt-8">
-              {[
-                { value: `${projects.length}`, label: "Projekte" },
-                { value: `${projects.filter((p) => p.status === "Live Projekt").length}`, label: "Live" },
-                { value: `${projects.filter((p) => p.status !== "Live Projekt").length}`, label: "Vorschau & Konzept" },
-              ].map(({ value, label }) => (
-                <div key={label}>
-                  <p className="text-3xl font-extrabold italic text-white">{value}</p>
-                  <p className="text-xs text-[#555] mt-0.5">{label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
