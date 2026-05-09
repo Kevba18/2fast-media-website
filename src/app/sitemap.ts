@@ -12,6 +12,7 @@ const staticRoutes = [
   "/leistungen/grafik-branding",
   "/leistungen/video-content",
   "/social-media-video-marketing",
+  "/kontakt",
   "/impressum",
   "/datenschutz",
 ];

@@ -40,7 +40,10 @@ export default function ProblemSolution() {
           {problems.map((p, i) => (
             <AnimateOnScroll key={p.number} delay={i * 0.1}>
               <div className="group relative h-full p-7 rounded-2xl bg-[#141414] border border-white/5 hover:border-[#E8400A]/25 transition-all duration-300 overflow-hidden">
-                <span className="absolute top-4 right-5 text-7xl font-black text-white/[0.03] select-none leading-none">
+                <span
+                  className="absolute top-4 right-5 text-7xl font-black text-white/[0.03] select-none leading-none"
+                  aria-hidden="true"
+                >
                   {p.number}
                 </span>
                 <p className="text-xs font-bold text-[#E8400A] mb-4">{p.number}</p>

@@ -1,11 +1,63 @@
 import type { SeoPage } from "@/lib/seo-pages";
 import { seoPageServices } from "@/lib/seo-pages";
+import { siteUrl } from "@/lib/site";
 import Link from "next/link";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function SeoLandingPage({ page }: { page: SeoPage }) {
+  const pageUrl = `${siteUrl}/${page.slug}`;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Startseite",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: page.h1,
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: page.title,
+      description: page.description,
+      provider: {
+        "@type": "ProfessionalService",
+        name: "2fastmedia",
+        url: siteUrl,
+      },
+      areaServed: ["Dinslaken", "Duisburg", "Wesel", "Oberhausen", "Ruhrgebiet", "NRW"],
+      url: pageUrl,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: page.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ];
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <section className="pt-32 pb-20 px-5 md:px-8 bg-[#0D0D0D]">
         <div className="max-w-4xl mx-auto">
           <AnimateOnScroll>
