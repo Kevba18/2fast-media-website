@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 import ConsentProvider from "@/components/ConsentProvider";
 import { siteUrl } from "@/lib/site";
 
@@ -82,10 +81,10 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${plusJakartaSans.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
-        <Script
+        <script
           id="schema-org"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg).replace(/</g, "\\u003c") }}
         />
       </head>
       <body className="min-h-screen bg-[#0D0D0D] text-white antialiased">
