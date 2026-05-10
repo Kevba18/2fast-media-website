@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
+import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const WHATSAPP_URL =
@@ -563,6 +564,23 @@ export default function Contact() {
                   </div>
                 </div>
               )}
+
+              <div className="flex items-center gap-4 p-5 rounded-2xl bg-[#141414] border border-white/5">
+                <div className="w-14 h-14 rounded-2xl overflow-hidden shrink-0 border border-white/10">
+                  <Image
+                    src="/pics/2fastmedia.png"
+                    alt="Kevin – 2fastmedia"
+                    width={56}
+                    height={56}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white">Kevin</p>
+                  <p className="text-xs text-[#A0A0A0] mt-0.5">Gründer & Ansprechpartner</p>
+                  <p className="text-xs text-[#E8400A] mt-0.5 font-semibold">2fastmedia</p>
+                </div>
+              </div>
 
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                 className="group flex items-center gap-4 w-full p-5 rounded-2xl bg-[#1A3D2B] border border-[#25D366]/20 hover:border-[#25D366]/50 transition-all duration-200">
