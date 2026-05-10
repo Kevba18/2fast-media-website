@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import ClientLogos from "@/components/ClientLogos";
 import TrustSection from "@/components/TrustSection";
 import ProblemSolution from "@/components/ProblemSolution";
 import WebsiteCheck from "@/components/WebsiteCheck";
@@ -40,7 +41,10 @@ export default function Home() {
         {/* 1. Hero */}
         <Hero />
 
-        {/* 2. Vertrauen / Website entscheidet (NEU) */}
+        {/* 2. Kunden-Logos */}
+        <ClientLogos />
+
+        {/* 3. Vertrauen / Website entscheidet */}
         <TrustSection />
 
         {/* 3. Problem / Warum gute Arbeit allein nicht reicht */}
