@@ -47,6 +47,10 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: siteUrl },
+  icons: {
+    icon: "/logo/favicon-2fastmedia.jpg",
+    apple: "/logo/favicon-2fastmedia.jpg",
+  },
 };
 
 const schemaOrg = [
