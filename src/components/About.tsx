@@ -1,3 +1,4 @@
+import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const points = [
@@ -18,8 +19,14 @@ export default function About() {
               <p className="text-xs font-semibold tracking-widest uppercase text-[#E8400A] mb-5">
                 2fastmedia
               </p>
-              <div className="w-24 h-24 rounded-3xl bg-[#E8400A]/15 border-2 border-[#E8400A]/25 flex items-center justify-center mb-6">
-                <span className="text-4xl font-black italic text-[#E8400A]">2f</span>
+              <div className="w-24 h-24 rounded-3xl overflow-hidden border-2 border-[#E8400A]/25 mb-6">
+                <Image
+                  src="/pics/2fastmedia.png"
+                  alt="2fastmedia Team"
+                  width={96}
+                  height={96}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <p className="text-2xl font-extrabold italic text-white">2fastmedia</p>
               <p className="text-sm text-[#A0A0A0] mt-2">
