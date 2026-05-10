@@ -101,7 +101,7 @@ export default function Navigation() {
           </li>
 
           <li>
-            <a href="#warum" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+            <a href="#problem" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
               Warum
             </a>
           </li>
@@ -196,7 +196,7 @@ export default function Navigation() {
               )}
             </AnimatePresence>
 
-            <a href="#warum" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+            <a href="#problem" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
               Warum
             </a>
             <a href="#ablauf" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
