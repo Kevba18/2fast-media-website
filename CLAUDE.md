@@ -4,16 +4,11 @@
 Agentur-Website für 2fastmedia.
 Next.js 16.2.4, TypeScript, Tailwind CSS v4, Framer Motion.
 
-## Lokaler Pfad
-`/Users/kevinbalfanz/2fast-media-website`
-
 ## GitHub
 Repo: `https://github.com/Kevba18/2fast-media-website`
-Push-Befehl: `git push origin main`
 
 ## Netlify
 Projekt: `2fast-media-website` (Team: 2fastmedia)
-Login: info@2fastmedia.de (E-Mail + Passwort, nicht GitHub OAuth)
 Dashboard: https://app.netlify.com/projects/2fast-media-website
 
 ## Aktueller Stand
