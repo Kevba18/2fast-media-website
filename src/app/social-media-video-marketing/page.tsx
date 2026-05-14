@@ -83,12 +83,18 @@ export default function SocialMediaVideoPage() {
       ziele: fields.ziele.join(", "), nachricht: fields.nachricht,
     };
     try {
-      const res = await fetch("/__forms.html", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(body).toString(),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "f59b9e81-d3c4-4d79-b143-e9ce6e8e2a6c",
+          subject: `Neue Social-Media-Anfrage von ${fields.name}`,
+          from_name: "2fastmedia Social-Media-Seite",
+          ...body,
+        }),
       });
-      if (!res.ok) throw new Error();
+      const data = await res.json();
+      if (!data.success) throw new Error();
       setSubmitted(true);
     } catch {
       setError("Senden fehlgeschlagen. Bitte direkt per E-Mail melden.");
