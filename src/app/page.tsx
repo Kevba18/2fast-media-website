@@ -3,11 +3,9 @@ import Hero from "@/components/Hero";
 import ClientLogos from "@/components/ClientLogos";
 import TrustSection from "@/components/TrustSection";
 import ProblemSolution from "@/components/ProblemSolution";
-import WebsiteCheck from "@/components/WebsiteCheck";
 import Services from "@/components/Services";
 import BeforeAfter from "@/components/BeforeAfter";
 import Process from "@/components/Process";
-import Audience from "@/components/Audience";
 import Projects from "@/components/Projects";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -50,10 +48,7 @@ export default function Home() {
         {/* 3. Problem / Warum gute Arbeit allein nicht reicht */}
         <ProblemSolution />
 
-        {/* 4. Interaktiver Website-Check (NEU) */}
-        <WebsiteCheck />
-
-        {/* 5. Leistungen */}
+        {/* 4. Leistungen */}
         <Services />
 
         {/* 6. Vorher-Nachher */}
@@ -62,10 +57,7 @@ export default function Home() {
         {/* 7. Ablauf / Prozess */}
         <Process />
 
-        {/* 8. Für wen ist das Angebot */}
-        <Audience />
-
-        {/* 9. Referenzen & Case Studies */}
+        {/* 7. Referenzen & Case Studies */}
         <Projects />
 
         {/* 10. FAQ */}
