@@ -137,6 +137,42 @@ body {
   border-radius: 2px;
 }
 
+/* ── Hero entrance animations (CSS-only, no JS dependency) ── */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(2rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-fade-right {
+  from { opacity: 0; transform: translateX(2.5rem); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-anim {
+  animation: hero-fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-anim-right {
+  animation: hero-fade-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-delay-50  { animation-delay: 50ms; }
+.hero-delay-150 { animation-delay: 150ms; }
+.hero-delay-250 { animation-delay: 250ms; }
+.hero-delay-300 { animation-delay: 300ms; }
+.hero-delay-360 { animation-delay: 360ms; }
+.hero-delay-440 { animation-delay: 440ms; }
+.hero-delay-300r { animation-delay: 300ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim,
+  .hero-anim-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0D0D0D; }

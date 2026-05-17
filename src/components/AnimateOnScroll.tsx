@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect } from "react";
 
 interface Props {
   children: ReactNode;
@@ -11,6 +11,16 @@ interface Props {
 }
 
 export default function AnimateOnScroll({ children, delay = 0, className = "", y = 28 }: Props) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
