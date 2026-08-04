@@ -271,18 +271,12 @@ export default function KontaktPage() {
       nachricht: fields.nachricht,
     };
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/__forms.html", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: "f59b9e81-d3c4-4d79-b143-e9ce6e8e2a6c",
-          subject: `Neue Anfrage von ${fields.name}${fields.unternehmen ? ` (${fields.unternehmen})` : ""}`,
-          from_name: "2fastmedia Kontaktseite",
-          ...body,
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(body).toString(),
       });
-      const data = await response.json();
-      if (!data.success) throw new Error("Fehler beim Senden");
+      if (!response.ok) throw new Error("Fehler beim Senden");
       setSubmitted(true);
     } catch {
       setError("Die Nachricht konnte gerade nicht gesendet werden. Bitte versuch es erneut oder schreib direkt per E-Mail.");

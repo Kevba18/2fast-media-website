@@ -237,25 +237,11 @@ export default function DatenschutzPage() {
               <li>Zeitpunkt der Anfrage</li>
             </ul>
             <p className="mt-4">
-              Je nach verwendeter Formularstrecke erfolgt die technische
-              Übermittlung über Netlify Forms oder Web3Forms. Web3Forms ist ein
-              Dienst von Web3Creative mit Sitz in Kerala, Indien. Die
-              Formularangaben werden an Web3Forms übermittelt, dort verarbeitet
-              und an unsere E-Mail-Adresse weitergeleitet. Nach Angaben des
-              Anbieters befinden sich die eingesetzten Server in den USA. Dabei
-              können auch technische Protokolldaten verarbeitet werden.
-            </p>
-            <p className="mt-4">
-              Weitere Informationen zu Web3Forms sind unter{" "}
-              <a
-                className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-[#E8400A]"
-                href="https://docs.web3forms.com/getting-started/faq"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                https://docs.web3forms.com/getting-started/faq
-              </a>{" "}
-              abrufbar.
+              Die technische Übermittlung der Formulardaten erfolgt über
+              Netlify Forms. Netlify verarbeitet die Angaben als technischer
+              Dienstleister, speichert die eingegangene Anfrage im
+              Netlify-System und leitet für neue Einträge eine Benachrichtigung
+              an unsere E-Mail-Adresse weiter.
             </p>
             <p className="mt-4">
               Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs.
@@ -271,9 +257,10 @@ export default function DatenschutzPage() {
             <p className="mt-4">
               Die Daten verbleiben bei uns, bis der Zweck für die Speicherung
               entfällt oder eine Löschung verlangt wird. Gesetzliche
-              Aufbewahrungsfristen bleiben unberührt. Für technische
-              Protokolldaten bei Web3Forms gelten ergänzend die vom Anbieter
-              veröffentlichten Löschfristen.
+              Aufbewahrungsfristen bleiben unberührt. Gespeicherte
+              Formulareinträge werden regelmäßig geprüft und gelöscht, sobald
+              sie für die Bearbeitung und Dokumentation der Anfrage nicht mehr
+              erforderlich sind.
             </p>
           </section>
 

@@ -74,24 +74,19 @@ export default function SocialMediaVideoPage() {
     setError(""); setLoading(true);
     const body: Record<string, string> = {
       "form-name": "social-media-anfrage",
+      source: "social-media-video-marketing",
       name: fields.name, email: fields.email,
       typ: fields.typ, plattformen: fields.plattformen.join(", "),
       material: fields.material, referenzen: fields.referenzen,
       ziele: fields.ziele.join(", "), nachricht: fields.nachricht,
     };
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: "f59b9e81-d3c4-4d79-b143-e9ce6e8e2a6c",
-          subject: `Neue Social-Media-Anfrage von ${fields.name}`,
-          from_name: "2fastmedia Social-Media-Seite",
-          ...body,
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(body).toString(),
       });
-      const data = await res.json();
-      if (!data.success) throw new Error();
+      if (!res.ok) throw new Error();
       setSubmitted(true);
     } catch {
       setError("Senden fehlgeschlagen. Bitte direkt per E-Mail melden.");
