@@ -5,18 +5,26 @@
     <title>Netlify Forms</title>
   </head>
   <body>
-    <!-- Altes Kontaktformular (Kompatibilität) -->
+    <!-- Erweitertes Kontaktformular (Kontaktseite) -->
     <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="source" />
       <input name="name" type="text" />
+      <input name="unternehmen" type="text" />
       <input name="email" type="email" />
-      <input name="topic" type="text" />
-      <textarea name="message"></textarea>
+      <input name="telefon" type="tel" />
+      <input name="website_status" type="text" />
+      <input name="website_url" type="url" />
+      <input name="leistungen" type="text" />
+      <input name="branche" type="text" />
+      <input name="dringlichkeit" type="text" />
+      <input name="budget" type="text" />
+      <input name="ziele" type="text" />
+      <textarea name="nachricht"></textarea>
     </form>
 
-    <!-- Erweitertes Projektstart-Formular (Startseite + Kontaktseite) -->
+    <!-- Erweitertes Projektstart-Formular (Startseite) -->
     <form name="projektstart" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="projektstart" />
       <input type="hidden" name="source" />

@@ -255,7 +255,7 @@ export default function KontaktPage() {
     setError("");
     setLoading(true);
     const body: Record<string, string> = {
-      "form-name": "projektstart",
+      "form-name": "contact",
       source: "kontaktseite",
       name: fields.name,
       unternehmen: fields.unternehmen,
@@ -336,12 +336,12 @@ export default function KontaktPage() {
                   </div>
                 ) : (
                   <form
-                    name="projektstart"
+                    name="contact"
                     method="POST"
                     onSubmit={handleSubmit}
                     className="rounded-3xl bg-[#141414] border border-white/5 p-7 md:p-8 space-y-6"
                   >
-                    <input type="hidden" name="form-name" value="projektstart" />
+                    <input type="hidden" name="form-name" value="contact" />
                     <input type="hidden" name="source" value="kontaktseite" />
                     <input type="hidden" name="bot-field" />
 
