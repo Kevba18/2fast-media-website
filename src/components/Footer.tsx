@@ -12,18 +12,18 @@ export default function Footer() {
           <div>
             <BrandLogo href="/" className="md:h-10" />
             <p className="text-xs text-[#A0A0A0] mt-2 max-w-xs">
-              Webdesign, Online-Sichtbarkeit & KI-Integration für Unternehmen im Ruhrgebiet.
+              Digitale Auftritte und Abläufe, die Unternehmen klarer, einfacher und professioneller machen.
             </p>
           </div>
 
           {/* Nav */}
           <nav className="flex flex-wrap gap-x-8 gap-y-3">
             {[
-              ["#leistungen", "Leistungen"],
-              ["#warum", "Warum 2fastmedia"],
-              ["/projekte", "Projekte"],
-              ["/website-check", "Website Check"],
-              ["/kontakt", "Kontakt"],
+              ["#ansatz", "Ansatz"],
+              ["#arbeitsweise", "Arbeitsweise"],
+              ["#bausteine", "Bausteine"],
+              ["#arbeiten", "Arbeiten"],
+              ["#kontakt", "Kontakt"],
             ].map(([href, label]) => (
               <a
                 key={href}
@@ -39,7 +39,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/5">
           <p className="text-xs text-[#A0A0A0]">
-            © {year} 2fastmedia · Webdesign, SEO und KI Integration
+            © {year} 2fastmedia · Digitale Entlastung für Unternehmen
           </p>
           <div className="flex items-center gap-5">
             {[

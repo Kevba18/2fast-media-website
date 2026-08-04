@@ -55,7 +55,6 @@ type Fields = {
   budget: string;
   ziele: string[];
   nachricht: string;
-  datenschutz: boolean;
 };
 
 const initialFields: Fields = {
@@ -71,7 +70,6 @@ const initialFields: Fields = {
   budget: "",
   ziele: [],
   nachricht: "",
-  datenschutz: false,
 };
 
 const kontaktFaqs = [
@@ -254,7 +252,6 @@ export default function KontaktPage() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!fields.datenschutz) { setError("Bitte stimme der Datenschutzerklärung zu."); return; }
     setError("");
     setLoading(true);
     const body: Record<string, string> = {
@@ -498,31 +495,13 @@ export default function KontaktPage() {
                       />
                     </div>
 
-                    {/* Datenschutz */}
-                    <div>
-                      <label className="flex items-start gap-3 cursor-pointer group">
-                        <button
-                          type="button"
-                          onClick={() => setFields((p) => ({ ...p, datenschutz: !p.datenschutz }))}
-                          className={`mt-0.5 w-5 h-5 rounded border-2 shrink-0 flex items-center justify-center transition-colors ${
-                            fields.datenschutz ? "border-[#E8400A] bg-[#E8400A]" : "border-white/25 group-hover:border-white/40"
-                          }`}
-                        >
-                          {fields.datenschutz && (
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                              <path d="M2 5L4.5 7.5L8 3" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          )}
-                        </button>
-                        <span className="text-xs text-[#A0A0A0] leading-relaxed">
-                          Ich habe die{" "}
-                          <Link href="/datenschutz" className="text-white underline hover:text-[#E8400A] transition-colors">
-                            Datenschutzerklärung
-                          </Link>{" "}
-                          gelesen und stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden.*
-                        </span>
-                      </label>
-                    </div>
+                    <p className="text-xs leading-relaxed text-[#A0A0A0]">
+                      Hinweise zur Verarbeitung meiner Angaben habe ich der{" "}
+                      <Link href="/datenschutz" className="text-white underline transition-colors hover:text-[#E8400A]">
+                        Datenschutzerklärung
+                      </Link>{" "}
+                      entnommen.
+                    </p>
 
                     {error && (
                       <p className="rounded-xl border border-red-500/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
@@ -547,7 +526,7 @@ export default function KontaktPage() {
                     </button>
 
                     <p className="text-xs text-[#555] text-center">
-                      Kein Spam. Keine Weitergabe. Nur echte Projektgespräche.
+                      Sichere Übermittlung. Nutzung nur zur Bearbeitung deiner Anfrage.
                     </p>
                   </form>
                 )}

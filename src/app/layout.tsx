@@ -1,21 +1,12 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import ConsentProvider from "@/components/ConsentProvider";
 import { siteUrl } from "@/lib/site";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
-  variable: "--font-plus-jakarta",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "2fastmedia | Websites, Sichtbarkeit und KI Prozesse",
+  title: "2fastmedia | Weniger digitale Baustellen. Mehr Zeit.",
   description:
-    "2fastmedia entwickelt moderne Websites, stärkt Google Sichtbarkeit und integriert digitale Prozesse für Unternehmen in NRW und deutschlandweit.",
+    "2fastmedia macht digitale Arbeit für Unternehmen klarer, einfacher und professioneller — mit Websites, Inhalten und hilfreichen digitalen Abläufen.",
   keywords: [
     "Webdesign NRW",
     "Webdesign Duisburg",
@@ -33,16 +24,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     url: siteUrl,
-    title: "2fastmedia | Websites, Sichtbarkeit und KI Prozesse",
+    title: "2fastmedia | Weniger digitale Baustellen. Mehr Zeit.",
     description:
-      "Moderne Websites, Google Sichtbarkeit und KI Prozesse für Unternehmen in NRW und deutschlandweit.",
+      "Websites, Inhalte und digitale Abläufe, die Unternehmen spürbar entlasten.",
     siteName: "2fastmedia",
   },
   twitter: {
     card: "summary_large_image",
-    title: "2fastmedia | Websites, Sichtbarkeit und KI Prozesse",
+    title: "2fastmedia | Weniger digitale Baustellen. Mehr Zeit.",
     description:
-      "Moderne Websites, Google Sichtbarkeit und KI Prozesse für Unternehmen in NRW und deutschlandweit.",
+      "Websites, Inhalte und digitale Abläufe, die Unternehmen spürbar entlasten.",
   },
   robots: { index: true, follow: true },
   alternates: { canonical: siteUrl },
@@ -65,7 +56,7 @@ const schemaOrg = [
     "@type": "ProfessionalService",
     name: "2fastmedia",
     description:
-      "Webdesign, SEO, Online Sichtbarkeit, KI Integration, Branding und Content für lokale Unternehmen.",
+      "Websites, Inhalte und digitale Abläufe für Unternehmen, die weniger digitale Baustellen und mehr Klarheit im Alltag wollen.",
     url: siteUrl,
     email: "info@2fastmedia.de",
     areaServed: ["Dinslaken", "Duisburg", "Wesel", "Oberhausen", "Voerde", "Hünxe", "Ruhrgebiet", "NRW"],
@@ -83,7 +74,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" className={`${plusJakartaSans.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang="de" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           id="schema-org"

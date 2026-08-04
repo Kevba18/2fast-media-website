@@ -61,26 +61,12 @@ const sections = [
     ),
   },
   {
-    title: "Verbraucherstreitbeilegung / Online-Streitbeilegung",
+    title: "Verbraucherstreitbeilegung",
     content: (
-      <>
-        <p>
-          Die Europäische Kommission stellt eine Plattform zur
-          Online-Streitbeilegung (OS) bereit:{" "}
-          <a
-            className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-[#E8400A]"
-            href="https://ec.europa.eu/consumers/odr/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://ec.europa.eu/consumers/odr/
-          </a>
-        </p>
-        <p className="mt-3">
-          Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren
-          vor einer Verbraucherschlichtungsstelle teilzunehmen.
-        </p>
-      </>
+      <p>
+        Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren
+        vor einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
     ),
   },
   {

@@ -59,7 +59,7 @@ export default function Navigation() {
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="flex items-center gap-1 text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200"
             >
-              Leistungen
+              Bausteine
               <svg
                 width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
                 className={`transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
@@ -89,11 +89,11 @@ export default function Navigation() {
                   ))}
                   <div className="border-t border-white/5 mx-3" />
                   <a
-                    href="#leistungen"
+                    href="#bausteine"
                     onClick={() => setDropdownOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 text-sm text-[#E8400A] hover:bg-white/5 transition-colors font-medium"
                   >
-                    Alle Leistungen →
+                    Alle Bausteine →
                   </a>
                 </motion.div>
               )}
@@ -101,28 +101,28 @@ export default function Navigation() {
           </li>
 
           <li>
-            <a href="#problem" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
-              Warum
+            <a href="#ansatz" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+              Ansatz
             </a>
           </li>
           <li>
-            <a href="/projekte" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
-              Projekte
+            <a href="#arbeitsweise" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+              Arbeitsweise
             </a>
           </li>
           <li>
-            <a href="/kontakt" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
-              Kontakt
+            <a href="#arbeiten" className="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors duration-200">
+              Arbeiten
             </a>
           </li>
         </ul>
 
         {/* CTA */}
         <a
-          href="/kontakt"
+          href="#kontakt"
           className="hidden md:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#E8400A] text-white text-sm font-bold hover:bg-[#FF5520] transition-colors duration-200 group"
         >
-          Projekt starten
+          Projekt besprechen
           <svg
             width="14" height="14"
             fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
@@ -162,7 +162,7 @@ export default function Navigation() {
               onClick={() => setMobileLeistungenOpen(!mobileLeistungenOpen)}
               className="flex items-center justify-between w-full py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors"
             >
-              Leistungen
+              Bausteine
               <svg
                 width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
                 className={`transition-transform duration-200 ${mobileLeistungenOpen ? "rotate-180" : ""}`}
@@ -196,24 +196,24 @@ export default function Navigation() {
               )}
             </AnimatePresence>
 
-            <a href="#problem" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
-              Warum
+            <a href="#ansatz" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+              Ansatz
             </a>
-            <a href="#ablauf" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
-              Ablauf
+            <a href="#arbeitsweise" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+              Arbeitsweise
             </a>
-            <a href="/projekte" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
-              Projekte
+            <a href="#arbeiten" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+              Arbeiten
             </a>
-            <a href="/kontakt" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
+            <a href="#kontakt" onClick={closeMenu} className="py-2.5 text-[#A0A0A0] hover:text-white font-medium transition-colors">
               Kontakt
             </a>
             <a
-              href="/kontakt"
+              href="#kontakt"
               onClick={closeMenu}
               className="mt-3 w-full text-center py-3 rounded-full bg-[#E8400A] text-white font-bold hover:bg-[#FF5520] transition-colors"
             >
-              Projekt starten
+              Projekt besprechen
             </a>
           </motion.div>
         )}

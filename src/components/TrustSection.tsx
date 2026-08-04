@@ -85,7 +85,7 @@ export default function TrustSection() {
         <AnimateOnScroll delay={0.3} className="mt-12 text-center">
           <a
             href="#website-check"
-            className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#E8400A] text-white font-bold text-sm hover:bg-[#FF5520] transition-all duration-200 hover:scale-105 active:scale-95"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/15 text-white font-semibold text-sm hover:border-white/40 hover:bg-white/5 transition-all duration-200"
           >
             Jetzt Website prüfen lassen
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"

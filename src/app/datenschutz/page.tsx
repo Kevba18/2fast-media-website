@@ -141,12 +141,20 @@ export default function DatenschutzPage() {
               Auftragsverarbeitung
             </h3>
             <p className="mt-3">
-              Wir haben mit dem eingesetzten Hosting Anbieter einen Vertrag zur
-              Auftragsverarbeitung abgeschlossen oder schließen diesen ab, sofern
-              dies erforderlich ist. Dabei handelt es sich um einen
-              datenschutzrechtlich vorgeschriebenen Vertrag, der sicherstellt,
-              dass der Anbieter personenbezogene Daten nur nach unseren Weisungen
-              und unter Einhaltung der DSGVO verarbeitet.
+              Für die Verarbeitung personenbezogener Daten in unserem Auftrag
+              gilt das von Netlify bereitgestellte Data Processing Addendum. Es
+              ist in die Netlify Vertragsbedingungen einbezogen und regelt die
+              Auftragsverarbeitung nach Art. 28 DSGVO. Das aktuelle Dokument ist
+              unter{" "}
+              <a
+                className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-[#E8400A]"
+                href="https://www.netlify.com/pdf/netlify-dpa.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                netlify.com/pdf/netlify-dpa.pdf
+              </a>{" "}
+              abrufbar.
             </p>
             <h3 className="mt-6 text-lg font-bold text-white">
               Datenübermittlung in Drittländer
@@ -195,6 +203,14 @@ export default function DatenschutzPage() {
               an der technisch fehlerfreien Darstellung und Optimierung der
               Website.
             </p>
+            <p className="mt-4">
+              Die Löschung erfolgt, sobald die Daten für den sicheren und
+              stabilen Betrieb nicht mehr erforderlich sind. Maßgeblich sind die
+              planabhängigen Aufbewahrungsfristen des Hosting-Anbieters sowie der
+              konkrete Sicherheits- und Fehleranalysezweck. Eine längere
+              Speicherung erfolgt nur, wenn ein sicherheitsrelevanter Vorfall
+              untersucht werden muss oder gesetzliche Pflichten dies verlangen.
+            </p>
           </section>
 
           <section>
@@ -221,11 +237,25 @@ export default function DatenschutzPage() {
               <li>Zeitpunkt der Anfrage</li>
             </ul>
             <p className="mt-4">
-              Das Kontaktformular wird über Netlify Forms verarbeitet. Die über
-              das Formular übermittelten Daten können dabei durch Netlify als
-              technischen Dienstleister verarbeitet und im Netlify System
-              gespeichert werden, damit die Anfrage zugestellt und bearbeitet
-              werden kann.
+              Je nach verwendeter Formularstrecke erfolgt die technische
+              Übermittlung über Netlify Forms oder Web3Forms. Web3Forms ist ein
+              Dienst von Web3Creative mit Sitz in Kerala, Indien. Die
+              Formularangaben werden an Web3Forms übermittelt, dort verarbeitet
+              und an unsere E-Mail-Adresse weitergeleitet. Nach Angaben des
+              Anbieters befinden sich die eingesetzten Server in den USA. Dabei
+              können auch technische Protokolldaten verarbeitet werden.
+            </p>
+            <p className="mt-4">
+              Weitere Informationen zu Web3Forms sind unter{" "}
+              <a
+                className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-[#E8400A]"
+                href="https://docs.web3forms.com/getting-started/faq"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                https://docs.web3forms.com/getting-started/faq
+              </a>{" "}
+              abrufbar.
             </p>
             <p className="mt-4">
               Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs.
@@ -240,9 +270,10 @@ export default function DatenschutzPage() {
             </p>
             <p className="mt-4">
               Die Daten verbleiben bei uns, bis der Zweck für die Speicherung
-              entfällt, eine Löschung verlangt wird oder eine erteilte
-              Einwilligung widerrufen wird. Gesetzliche Aufbewahrungsfristen
-              bleiben unberührt.
+              entfällt oder eine Löschung verlangt wird. Gesetzliche
+              Aufbewahrungsfristen bleiben unberührt. Für technische
+              Protokolldaten bei Web3Forms gelten ergänzend die vom Anbieter
+              veröffentlichten Löschfristen.
             </p>
           </section>
 
@@ -386,9 +417,47 @@ export default function DatenschutzPage() {
             </ul>
           </section>
 
+          <section className="rounded-3xl border border-[#E8400A]/25 bg-[#E8400A]/5 p-6 md:p-8">
+            <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
+              14. Widerspruchsrecht gegen die Verarbeitung in besonderen Fällen
+            </h2>
+            <p>
+              Werden personenbezogene Daten auf Grundlage von Art. 6 Abs. 1 lit.
+              f DSGVO verarbeitet, besteht aus Gründen, die sich aus der
+              besonderen Situation der betroffenen Person ergeben, jederzeit
+              das Recht, Widerspruch gegen diese Verarbeitung einzulegen. Wir
+              verarbeiten die betroffenen Daten dann nicht mehr, es sei denn, es
+              bestehen zwingende schutzwürdige Gründe für die Verarbeitung, die
+              die Interessen, Rechte und Freiheiten der betroffenen Person
+              überwiegen, oder die Verarbeitung dient der Geltendmachung,
+              Ausübung oder Verteidigung von Rechtsansprüchen.
+            </p>
+          </section>
+
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              14. Widerspruch gegen Werbe E-Mails
+              15. Beschwerderecht bei der Aufsichtsbehörde
+            </h2>
+            <p>
+              Zuständige Aufsichtsbehörde ist die Landesbeauftragte für
+              Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI
+              NRW), Kavalleriestraße 2–4, 40213 Düsseldorf. Weitere Informationen
+              und Kontaktmöglichkeiten sind unter{" "}
+              <a
+                className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-[#E8400A]"
+                href="https://www.ldi.nrw.de/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                https://www.ldi.nrw.de/
+              </a>{" "}
+              abrufbar.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
+              16. Widerspruch gegen Werbe E-Mails
             </h2>
             <p>
               Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten
@@ -401,10 +470,10 @@ export default function DatenschutzPage() {
 
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              15. Aktualität dieser Datenschutzerklärung
+              17. Aktualität dieser Datenschutzerklärung
             </h2>
             <p>Diese Datenschutzerklärung ist aktuell gültig.</p>
-            <p className="mt-4">Stand: Mai 2026</p>
+            <p className="mt-4">Stand: August 2026</p>
           </section>
         </div>
       </article>
