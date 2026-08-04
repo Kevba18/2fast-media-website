@@ -2,20 +2,20 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 const steps = [
   {
-    title: "Alltag verstehen",
-    text: "Wir schauen auf dein Unternehmen, deinen Auftritt und die digitalen Stellen, die gerade unnötig Zeit oder Nerven kosten.",
+    title: "Ziele klären",
+    text: "Wir schauen, welche Anfragen du gewinnen willst, welche Leistungen wichtig sind und wo deine aktuelle Website bremst.",
   },
   {
-    title: "Richtung festlegen",
-    text: "Wir priorisieren. Was braucht zuerst Klarheit? Was kann einfacher werden? Und was wäre nur zusätzliche Technik ohne Wirkung?",
+    title: "Struktur und Inhalte planen",
+    text: "Aus Angebot, Zielgruppe und Suchintention entsteht eine klare Seitenstruktur mit verständlichen Texten.",
   },
   {
-    title: "Passend umsetzen",
-    text: "Von Website und Design bis zu hilfreichen digitalen Abläufen: Alles wird so gebaut, dass es zu deinem Team und Alltag passt.",
+    title: "Design und Umsetzung",
+    text: "Die Website wird modern gestaltet, technisch sauber umgesetzt und auf mobile Nutzung ausgelegt.",
   },
   {
-    title: "Einfach weiterarbeiten",
-    text: "Du bekommst keine Übergabe voller Fragezeichen, sondern eine Lösung, mit der du arbeiten kannst und einen klaren nächsten Schritt.",
+    title: "SEO Grundlagen und Launch",
+    text: "Meta Daten, interne Verlinkung, Sitemap, robots.txt, Formulare und Tracking-Grundlagen werden sauber vorbereitet.",
   },
 ];
 
@@ -28,11 +28,11 @@ export default function Process() {
             Ablauf
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold italic tracking-tight">
-            Digitale Veränderung, ohne dass du ein Technikprojekt managen musst
+            Klarer Prozess statt offener Baustelle
           </h2>
           <p className="mt-5 text-[#A0A0A0] max-w-2xl leading-relaxed">
-            Gute Lösungen entstehen gemeinsam — aber ohne unnötige Schleifen,
-            Fachsprache oder zusätzliche Baustellen auf deiner Seite.
+            Ein gutes Website-Projekt braucht Entscheidungen, aber keinen
+            unnötigen Aufwand auf deiner Seite.
           </p>
         </AnimateOnScroll>
 
@@ -53,7 +53,7 @@ export default function Process() {
             href="#kontakt"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/15 text-white font-bold hover:border-[#E8400A]/50 hover:bg-[#E8400A]/10 transition-all duration-200"
           >
-            Projekt gemeinsam einordnen
+            Projekt besprechen
           </a>
         </AnimateOnScroll>
       </div>

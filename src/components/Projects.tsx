@@ -104,9 +104,9 @@ export default function Projects() {
             Ausgewählte Projekte
           </h2>
           <p className="mt-5 text-[#A0A0A0] max-w-3xl mx-auto leading-relaxed">
-            Von klaren Markenauftritten bis zu digitalen Plattformen: Jedes Projekt
-            schafft mehr Orientierung, einen professionellen Auftritt oder eine
-            einfachere digitale Zusammenarbeit.
+            Von lokalen Dienstleistern über Portale bis zu Premium Landingpages.
+            Jedes Projekt folgt einem klaren Ziel: verständlich auftreten, Vertrauen
+            schaffen und Anfragen einfacher machen.
           </p>
         </AnimateOnScroll>
 

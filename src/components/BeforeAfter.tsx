@@ -2,31 +2,31 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 const comparisons = [
   {
-    before: "Informationen sind überall verteilt",
-    after: "Ein Auftritt, der auf den Punkt bringt, was wichtig ist",
+    before: '„Wir machen alles irgendwie“',
+    after: "Klare Leistung, klare Zielgruppe, klare Anfrage",
     beforeDetail:
-      "Wenn Website, Unterlagen und Inhalte unterschiedliche Geschichten erzählen, muss dein Team ständig nacherklären und Informationen zusammensuchen.",
+      "Breite, schwammige Aussagen schrecken ab. Wenn unklar ist, was du anbietest und für wen, holt sich der Besucher eine Empfehlung beim nächsten.",
     afterDetail:
-      "Eine klare Struktur macht Angebot, Haltung und nächste Schritte sofort verständlich — für Kunden genauso wie für dein eigenes Team.",
-    icon: "✦",
+      "Eine klare Positionierung macht dein Angebot sofort greifbar. Besucher verstehen in Sekunden, ob du der richtige Ansprechpartner bist – und nehmen Kontakt auf.",
+    icon: "💡",
   },
   {
-    before: "Jede Routine beginnt wieder bei null",
-    after: "Wiederkehrende Arbeit folgt einem sauberen Ablauf",
+    before: "Schöne Seite, aber keine Struktur",
+    after: "Website mit Suchlogik, Nutzerführung und Kontaktfokus",
     beforeDetail:
-      "E-Mails, Texte, Angebote und Übergaben kosten unnötig Energie, wenn es keine Vorlagen, klare Schritte oder sinnvolle Automatisierung gibt.",
+      "Gutes Design ohne saubere Seitenstruktur bringt keine Anfragen. Google versteht das Angebot nicht, und Besucher finden nicht, was sie suchen.",
     afterDetail:
-      "Die richtigen Informationen stehen zur richtigen Zeit bereit. So wird aus einer wiederkehrenden Aufgabe ein verlässlicher, einfacher Prozess.",
-    icon: "↻",
+      "Struktur, Inhalte und technische Grundlagen arbeiten zusammen. Die Website wird gefunden, überzeugt und führt Besucher gezielt zur Kontaktaufnahme.",
+    icon: "🏗️",
   },
   {
-    before: "Ein neues Tool erzeugt die nächste Baustelle",
-    after: "Ein System, das für Menschen verständlich bleibt",
+    before: "Jede Anfrage kostet Zeit",
+    after: "Kontaktformular mit Vorqualifizierung und sauberem Ablauf",
     beforeDetail:
-      "Technik wird zur Belastung, wenn sie ohne Blick auf den Alltag eingeführt wird und niemand genau weiß, wann sie wirklich hilft.",
+      "Ohne Struktur im Anfrageprozess kostet jede Nachricht zu viel Zeit. Unklar, worum es geht, wie dringend es ist und ob es überhaupt passt.",
     afterDetail:
-      "Wir bauen nur das, was deine Arbeit klarer macht. Keine Automatisierung um der Automatisierung willen — sondern Lösungen, die angenommen werden.",
-    icon: "✓",
+      "Ein gut strukturiertes Formular filtert vorab, was wichtig ist. Du weißt sofort, worum es geht, und kannst gezielt und effizient antworten.",
+    icon: "⚡",
   },
 ];
 
@@ -41,12 +41,12 @@ export default function BeforeAfter() {
             Vorher · Nachher
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold italic tracking-tight">
-            Aus digitalem Aufwand wird{" "}
-            <span className="text-[#E8400A]">spürbare Entlastung</span>
+            Aus unklar wird{" "}
+            <span className="text-[#E8400A]">überzeugend</span>
           </h2>
           <p className="mt-5 text-[#A0A0A0] max-w-2xl mx-auto leading-relaxed">
-            Nicht alles muss automatisiert werden. Aber alles darf klarer, einfacher
-            und verlässlicher werden.
+            Diese drei Muster begegnen uns bei fast jedem Projekt – und mit der richtigen
+            Struktur lassen sie sich gezielt lösen.
           </p>
         </AnimateOnScroll>
 
@@ -97,7 +97,7 @@ export default function BeforeAfter() {
             href="#kontakt"
             className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#E8400A] text-white font-bold text-sm hover:bg-[#FF5520] transition-all duration-200 hover:scale-105 active:scale-95"
           >
-            Meine digitale Baustelle besprechen
+            Kostenlose Einschätzung anfragen
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
               className="group-hover:translate-x-0.5 transition-transform">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />

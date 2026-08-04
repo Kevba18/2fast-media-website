@@ -300,12 +300,12 @@ export default function Contact() {
             Projekt starten
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold italic tracking-tight mb-4">
-            Bereit für weniger digitale{" "}
-            <span className="text-[#E8400A]">Baustellen?</span>
+            Bereit online sichtbar{" "}
+            <span className="text-[#E8400A]">zu werden?</span>
           </h2>
           <p className="text-[#A0A0A0]">
-            Wir schauen gemeinsam, was gerade bremst und welcher nächste Schritt
-            wirklich sinnvoll ist. Das erste Gespräch ist <strong className="text-white">kostenlos</strong> und unverbindlich.
+            Erstes Gespräch ist{" "}
+            <strong className="text-white">kostenlos</strong> und unverbindlich.
           </p>
         </AnimateOnScroll>
 

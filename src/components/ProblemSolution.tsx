@@ -3,35 +3,36 @@ import AnimateOnScroll from "./AnimateOnScroll";
 const problems = [
   {
     number: "01",
-    headline: "Der digitale Auftritt erzählt nicht klar genug, wer du bist",
-    body: "Website, Texte oder Gestaltung wirken oft nicht so professionell wie die eigentliche Arbeit. Das schafft Rückfragen, Unsicherheit und unnötige Erklärungen.",
+    headline: "Deine Website wirkt nicht wie dein Unternehmen",
+    body: "Viele lokale Anbieter sind fachlich stark, wirken online aber austauschbar oder veraltet. Das kostet Vertrauen, bevor ein Gespräch entsteht.",
   },
   {
     number: "02",
-    headline: "Wiederkehrende Arbeit wird jedes Mal neu erledigt",
-    body: "Anfragen sortieren, Informationen zusammensuchen, Texte vorbereiten oder intern nachfassen: Kleine Routinen summieren sich jeden Tag.",
+    headline: "Google versteht nicht klar genug, wofür du gefunden werden willst",
+    body: "Ohne saubere Struktur, lokale Inhalte und technische Grundlagen bleiben relevante Suchbegriffe oft ungenutzt.",
   },
   {
     number: "03",
-    headline: "Tools gibt es genug – aber keinen Ablauf, der trägt",
-    body: "Neue Programme helfen nicht automatisch. Erst wenn Website, Kommunikation und Prozesse zusammenpassen, entsteht wirkliche Entlastung.",
+    headline: "Digitale Prozesse kosten mehr Zeit als nötig",
+    body: "Anfragen, Inhalte, E-Mails oder interne Abläufe lassen sich oft mit einfachen KI-Workflows deutlich besser vorbereiten.",
   },
 ];
 
 export default function ProblemSolution() {
   return (
-    <section id="wirkung" className="bg-[#0D0D0D] px-5 py-28 md:px-8">
+    <section id="problem" className="py-28 px-5 md:px-8 bg-[#0D0D0D]">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll className="mb-16 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase text-[#E8400A] mb-4">
-            Wo Zeit verloren geht
+            Das Problem
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold italic tracking-tight">
-            Zeit geht selten in einer großen Aufgabe verloren.
+            Gute Arbeit reicht online nicht mehr aus
           </h2>
           <p className="mt-5 text-[#A0A0A0] max-w-2xl mx-auto leading-relaxed">
-            Sie verschwindet in kleinen digitalen Baustellen: unklaren Informationen,
-            manuellen Routinen und Werkzeugen, die nicht zusammenspielen.
+            Kunden vergleichen dich online, bevor sie anrufen. Wenn Website,
+            Inhalte und Sichtbarkeit nicht zusammenpassen, gehen passende Anfragen
+            an andere Anbieter.
           </p>
         </AnimateOnScroll>
 
