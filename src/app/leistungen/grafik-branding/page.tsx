@@ -56,7 +56,7 @@ const faqSchema = {
       name: "Was kostet ein professionelles Logo in Dinslaken?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ein professionelles Logo bei 2fastmedia startet ab 350 €. Inklusive mehrerer Entwürfe, Revisionen und Lieferung aller benötigten Dateiformate (PNG, SVG, PDF).",
+        text: "Ein professionelles Logo bei 2fastmedia startet ab 416,50 € inklusive gesetzlicher Umsatzsteuer (350 € netto). Inklusive mehrerer Entwürfe, Revisionen und Lieferung aller benötigten Dateiformate (PNG, SVG, PDF).",
       },
     },
     {
@@ -101,7 +101,7 @@ const steps = [
 ];
 
 const faqs = [
-  { q: "Was kostet ein professionelles Logo in Dinslaken?", a: "Ein professionelles Logo bei 2fastmedia startet ab 350 €. Inklusive mehrerer Entwürfe, Revisionen und Lieferung aller Dateiformate (PNG, SVG, PDF)." },
+  { q: "Was kostet ein professionelles Logo in Dinslaken?", a: "Ein professionelles Logo bei 2fastmedia startet ab 416,50 € inklusive gesetzlicher Umsatzsteuer (350 € netto). Inklusive mehrerer Entwürfe, Revisionen und Lieferung aller Dateiformate (PNG, SVG, PDF)." },
   { q: "Was ist der Unterschied zwischen Logo und Corporate Identity?", a: "Ein Logo ist das visuelle Erkennungszeichen. Eine Corporate Identity geht weiter: Farbpalette, Typografie, Bildsprache und die Regeln wie alles eingesetzt wird – auf der Website, in Flyern, auf Social Media." },
   { q: "Bekomme ich alle Dateiformate?", a: "Ja. Du bekommst dein Logo in allen gängigen Formaten: PNG, SVG, PDF und auf Wunsch AI/EPS. Für Agenturen und Druckereien geeignet." },
   { q: "Macht 2fastmedia auch Printmaterialien?", a: "Ja. Visitenkarten, Flyer, Briefpapier, Schilder, Rollups und weiteres – druckfertig und auf deine CI abgestimmt." },

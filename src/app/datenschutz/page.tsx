@@ -244,6 +244,16 @@ export default function DatenschutzPage() {
               an unsere E-Mail-Adresse weiter.
             </p>
             <p className="mt-4">
+              Die Angabe von Name und E-Mail-Adresse ist erforderlich, um die
+              Anfrage bearbeiten zu können. Ohne diese Angaben kann das Formular
+              nicht abgesendet werden. Alle weiteren Angaben sind freiwillig.
+            </p>
+            <p className="mt-4">
+              Formulareinträge können in den USA verarbeitet werden. Für diese
+              Übermittlung gelten die im Abschnitt „Hosting“ beschriebenen
+              Garantien und Hinweise zu Netlify und dem EU-US Data Privacy Framework.
+            </p>
+            <p className="mt-4">
               Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs.
               1 lit. b DSGVO, sofern die Anfrage mit der Erfüllung eines Vertrags
               zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen
@@ -324,16 +334,55 @@ export default function DatenschutzPage() {
               Inhalte wie YouTube Videos, Google Maps Karten, Calendly Widgets
               oder Social Media Feeds direkt eingebunden.
             </p>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
+              10. Kommunikation über WhatsApp
+            </h2>
+            <p>
+              Auf dieser Website wird WhatsApp als freiwilliger Kommunikationsweg
+              angeboten. Wenn Nutzer den WhatsApp Link anklicken oder 2fastmedia
+              über WhatsApp kontaktieren, werden insbesondere die Telefonnummer,
+              Profilinformationen, Kommunikationsinhalte sowie technische
+              Verbindungs- und Nutzungsdaten verarbeitet.
+            </p>
             <p className="mt-4">
-              Die Website enthält einen externen Link zu WhatsApp. Eine
-              Datenübermittlung an WhatsApp erfolgt erst, wenn Nutzer diesen Link
-              aktiv anklicken und die Website verlassen.
+              Anbieter für Nutzer in der Europäischen Region ist WhatsApp Ireland
+              Limited. WhatsApp gehört zur Meta Unternehmensgruppe und setzt für
+              den Betrieb weitere Meta Unternehmen und Dienstleister ein. Dabei
+              können Daten auch außerhalb des Europäischen Wirtschaftsraums,
+              insbesondere in den USA, verarbeitet werden. WhatsApp nennt hierfür
+              unter anderem das EU-US Data Privacy Framework und von der
+              EU-Kommission genehmigte Standardvertragsklauseln als Garantien.
+            </p>
+            <p className="mt-4">
+              Die Verarbeitung durch 2fastmedia erfolgt auf Grundlage von Art. 6
+              Abs. 1 lit. b DSGVO, soweit die Kommunikation zur Durchführung
+              vorvertraglicher Maßnahmen oder zur Vertragserfüllung erforderlich
+              ist. In allen übrigen Fällen erfolgt sie auf Grundlage von Art. 6
+              Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in einer
+              schnellen und nutzerfreundlichen Kommunikation.
+            </p>
+            <p className="mt-4">
+              Die Nutzung von WhatsApp ist nicht erforderlich. E-Mail und Telefon
+              stehen als gleichwertige Kontaktmöglichkeiten zur Verfügung. Weitere
+              Informationen zur Verarbeitung durch WhatsApp enthält die{" "}
+              <a
+                className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-[#E8400A]"
+                href="https://www.whatsapp.com/legal/privacy-policy-eea"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Datenschutzerklärung von WhatsApp
+              </a>
+              .
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              10. Projektanfragen
+              11. Projektanfragen
             </h2>
             <p>
               Wenn über diese Website Projektanfragen gestellt werden,
@@ -352,7 +401,7 @@ export default function DatenschutzPage() {
 
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              11. Empfänger von Daten
+              12. Empfänger von Daten
             </h2>
             <p>
               Personenbezogene Daten werden nur an Dritte weitergegeben, wenn
@@ -370,7 +419,7 @@ export default function DatenschutzPage() {
 
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              12. Speicherdauer
+              13. Speicherdauer
             </h2>
             <p>
               Personenbezogene Daten werden nur so lange gespeichert, wie dies
@@ -386,7 +435,7 @@ export default function DatenschutzPage() {
 
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              13. Rechte betroffener Personen
+              14. Rechte betroffener Personen
             </h2>
             <p>
               Betroffene Personen haben im Rahmen der geltenden gesetzlichen
@@ -406,7 +455,7 @@ export default function DatenschutzPage() {
 
           <section className="rounded-3xl border border-[#E8400A]/25 bg-[#E8400A]/5 p-6 md:p-8">
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              14. Widerspruchsrecht gegen die Verarbeitung in besonderen Fällen
+              15. Widerspruchsrecht gegen die Verarbeitung in besonderen Fällen
             </h2>
             <p>
               Werden personenbezogene Daten auf Grundlage von Art. 6 Abs. 1 lit.
@@ -423,7 +472,7 @@ export default function DatenschutzPage() {
 
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              15. Beschwerderecht bei der Aufsichtsbehörde
+              16. Beschwerderecht bei der Aufsichtsbehörde
             </h2>
             <p>
               Zuständige Aufsichtsbehörde ist die Landesbeauftragte für
@@ -444,7 +493,7 @@ export default function DatenschutzPage() {
 
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              16. Widerspruch gegen Werbe E-Mails
+              17. Widerspruch gegen Werbe E-Mails
             </h2>
             <p>
               Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten
@@ -457,7 +506,7 @@ export default function DatenschutzPage() {
 
           <section>
             <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
-              17. Aktualität dieser Datenschutzerklärung
+              18. Aktualität dieser Datenschutzerklärung
             </h2>
             <p>Diese Datenschutzerklärung ist aktuell gültig.</p>
             <p className="mt-4">Stand: August 2026</p>

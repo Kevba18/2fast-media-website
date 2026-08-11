@@ -72,7 +72,7 @@ const faqSchema = {
       name: "Was kostet eine KI-Integration?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Das hängt stark vom Umfang ab. Einfache Automatisierungen können bereits ab 300–500 € umgesetzt werden. Komplexere Systeme werden individuell kalkuliert. Im kostenlosen Erstgespräch erfährst du, was möglich ist und was es kostet.",
+        text: "Das hängt stark vom Umfang ab. Einfache Automatisierungen können bereits ab 357–595 € inklusive gesetzlicher Umsatzsteuer (300–500 € netto) umgesetzt werden. Komplexere Systeme werden individuell kalkuliert. Im kostenlosen Erstgespräch erfährst du, was möglich ist und was es kostet.",
       },
     },
     {
@@ -103,7 +103,7 @@ const steps = [
 const faqs = [
   { q: "Für welche Unternehmen lohnt sich KI-Integration?", a: "Für fast jedes Unternehmen mit wiederkehrenden Aufgaben: E-Mail-Kommunikation, Angebotserstellung, Social-Media, Kundensupport, Terminplanung. Wir schauen uns an, wo KI bei dir den größten Hebel hat." },
   { q: "Brauche ich technisches Wissen?", a: "Nein. Wir bauen die Automatisierungen so, dass du sie selbst bedienen kannst – ohne Programmierkenntnisse. Du bekommst außerdem eine Einweisung." },
-  { q: "Was kostet eine KI-Integration?", a: "Einfache Automatisierungen starten ab 300–500 €. Komplexere Systeme werden individuell kalkuliert. Im kostenlosen Erstgespräch erfährst du, was möglich ist und was es kostet." },
+  { q: "Was kostet eine KI-Integration?", a: "Einfache Automatisierungen starten ab 357–595 € inklusive gesetzlicher Umsatzsteuer (300–500 € netto). Komplexere Systeme werden individuell kalkuliert. Im kostenlosen Erstgespräch erfährst du, was möglich ist und was es kostet." },
   { q: "Welche KI-Tools nutzt 2fastmedia?", a: "Je nach Anwendungsfall: ChatGPT / OpenAI, Make.com, Zapier, n8n oder spezialisierte Tools. Wir wählen immer die Lösung, die am besten zu deinem Workflow passt." },
   { q: "Was passiert, wenn sich ein Tool verändert oder abschalten wird?", a: "Wir bauen auf etablierte Plattformen mit langer Lebensdauer. Sollte sich dennoch etwas ändern, helfen wir dir bei der Migration oder Anpassung." },
 ];

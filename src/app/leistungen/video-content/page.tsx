@@ -56,7 +56,7 @@ const faqSchema = {
       name: "Was kostet ein Imagefilm in Dinslaken?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ein einfacher Imagefilm startet bei 2fastmedia ab 500 €. Der genaue Preis hängt von Länge, Drehtagen, Animationen und Nachbearbeitung ab. Im kostenlosen Erstgespräch besprechen wir deine Vorstellungen und erstellen ein Angebot.",
+        text: "Ein einfacher Imagefilm startet bei 2fastmedia ab 595 € inklusive gesetzlicher Umsatzsteuer (500 € netto). Der genaue Preis hängt von Länge, Drehtagen, Animationen und Nachbearbeitung ab. Im kostenlosen Erstgespräch besprechen wir deine Vorstellungen und erstellen ein Angebot.",
       },
     },
     {
@@ -101,7 +101,7 @@ const steps = [
 ];
 
 const faqs = [
-  { q: "Was kostet ein Imagefilm in Dinslaken?", a: "Ein einfacher Imagefilm startet ab 500 €. Der genaue Preis hängt von Länge, Drehtagen und Nachbearbeitung ab. Im kostenlosen Erstgespräch besprechen wir deine Vorstellungen." },
+  { q: "Was kostet ein Imagefilm in Dinslaken?", a: "Ein einfacher Imagefilm startet ab 595 € inklusive gesetzlicher Umsatzsteuer (500 € netto). Der genaue Preis hängt von Länge, Drehtagen und Nachbearbeitung ab. Im kostenlosen Erstgespräch besprechen wir deine Vorstellungen." },
   { q: "Für welche Plattformen produziert ihr Videos?", a: "Für Instagram Reels, TikTok, YouTube, LinkedIn und deine Website. Jedes Format wird plattformgerecht optimiert – Hochformat für Social Media, Querformat für YouTube." },
   { q: "Brauche ich selbst Equipment?", a: "Nein. Wir bringen Kamera, Licht und Ton mit. Du musst nur du selbst sein – wir sorgen dafür, dass alles gut aussieht." },
   { q: "Kann ich regelmäßig Content bekommen?", a: "Ja. Wir bieten Content-Pakete für monatlich regelmäßige Erstellung an. So bleibt dein Kanal aktiv, ohne dass du selbst Zeit investieren musst." },

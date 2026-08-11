@@ -89,7 +89,7 @@ export default function Hero() {
 
           <motion.div {...fadeUp(0.44)} className="grid grid-cols-3 gap-4 max-w-xl">
             {[
-              ["Direkt", "mit dem Team sprechen"],
+              ["Direkt", "mit Kevin sprechen"],
               ["Überregional", "NRW & deutschlandweit"],
               ["Klar", "Website, SEO, KI"],
             ].map(([value, label]) => (

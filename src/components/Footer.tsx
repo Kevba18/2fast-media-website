@@ -38,9 +38,12 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/5">
-          <p className="text-xs text-[#A0A0A0]">
-            © {year} 2fastmedia · Webdesign, SEO und KI Integration
-          </p>
+          <div className="text-xs text-[#A0A0A0]">
+            <p>© {year} 2fastmedia · Webdesign, SEO und KI Integration</p>
+            <p className="mt-1 max-w-xl leading-5">
+              Preisangaben auf dieser Website enthalten die gesetzliche Umsatzsteuer.
+            </p>
+          </div>
           <div className="flex items-center gap-5">
             {[
               ["/impressum", "Impressum"],

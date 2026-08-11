@@ -56,7 +56,7 @@ const faqSchema = {
       name: "Was kostet eine professionelle Website in Dinslaken?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Eine individuelle Website bei 2fastmedia startet ab 800 €. Der genaue Preis hängt von Umfang, Funktionen und Design ab. Im kostenlosen Erstgespräch erstellst du ein transparentes Angebot.",
+        text: "Eine individuelle Website bei 2fastmedia startet ab 952 € inklusive gesetzlicher Umsatzsteuer (800 € netto). Der genaue Preis hängt von Umfang, Funktionen und Design ab. Im kostenlosen Erstgespräch erhältst du ein transparentes Angebot.",
       },
     },
     {
@@ -125,7 +125,7 @@ const steps = [
 ];
 
 const faqs = [
-  { q: "Was kostet eine professionelle Website in Dinslaken?", a: "Eine individuelle Website bei 2fastmedia startet ab 800 €. Der genaue Preis hängt von Umfang, Funktionen und Design ab. Im kostenlosen Erstgespräch erstellst du ein transparentes Angebot." },
+  { q: "Was kostet eine professionelle Website in Dinslaken?", a: "Eine individuelle Website bei 2fastmedia startet ab 952 € inklusive gesetzlicher Umsatzsteuer (800 € netto). Der genaue Preis hängt von Umfang, Funktionen und Design ab. Im kostenlosen Erstgespräch erhältst du ein transparentes Angebot." },
   { q: "Wie lange dauert die Entwicklung?", a: "Eine einfache Unternehmenswebsite ist typischerweise in 2–3 Wochen fertig. Bei komplexeren Projekten sind es 4–6 Wochen." },
   { q: "Kann ich die Website später selbst bearbeiten?", a: "Ja. Auf Wunsch wird ein einfaches CMS integriert, sodass du Texte und Bilder selbst aktualisieren kannst – ohne Programmierkenntnisse." },
   { q: "Was ist der Unterschied zu Wix oder Jimdo?", a: "Baukastensysteme sind langsam, generisch und technisch limitiert. Individuelle Entwicklung bedeutet schnellere Ladezeiten, besseres Google-Ranking und kein monatliches Abo." },

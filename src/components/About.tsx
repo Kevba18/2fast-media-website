@@ -22,7 +22,7 @@ export default function About() {
               <div className="w-24 h-24 rounded-3xl overflow-hidden border-2 border-[#E8400A]/25 mb-6">
                 <Image
                   src="/pics/2fastmedia.png"
-                  alt="2fastmedia Team"
+                  alt="Kevin Balfanz von 2fastmedia"
                   width={96}
                   height={96}
                   className="object-cover w-full h-full"
@@ -34,7 +34,7 @@ export default function About() {
               </p>
             </div>
             <p className="relative text-sm text-[#A0A0A0] leading-relaxed">
-              Keine anonyme Agentur. Klare Ansprechpartner, klare Umsetzung,
+              Keine anonyme Agentur. Ein klarer Ansprechpartner, klare Umsetzung,
               sichtbare Ergebnisse.
             </p>
           </div>

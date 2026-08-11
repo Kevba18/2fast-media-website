@@ -1,5 +1,5 @@
 export const CONSENT_STORAGE_KEY = "2fastmedia-consent-v1";
-export const CONSENT_VERSION = "1.0";
+export const CONSENT_VERSION = "1.1";
 
 export const OPTIONAL_CONSENT_SERVICES_ENABLED = false;
 
